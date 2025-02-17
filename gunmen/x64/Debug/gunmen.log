@@ -1,0 +1,42 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Katalog Output nie kończy się ukośnikiem. To wystąpienie kompilacji doda ukośnik, ponieważ jest on niezbędny, aby możliwa była poprawna ocena katalogu Output.
+  gunmen.cpp
+C:\Users\filip\source\libs\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: interfejs niebędący interfejsem dll class "std::runtime_error"użyto jako podstawowego dla interfejsu biblioteki dll class "sf::Exception"
+  (kompilowanie pliku źródłowego „gunmen.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\stdexcept(100,19):
+      zobacz deklarację „std::runtime_error”
+      C:\Users\filip\source\libs\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
+      zobacz deklarację „sf::Exception”
+  
+  Animation.cpp
+C:\Users\filip\source\libs\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: interfejs niebędący interfejsem dll class "std::runtime_error"użyto jako podstawowego dla interfejsu biblioteki dll class "sf::Exception"
+  (kompilowanie pliku źródłowego „src/Animation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\stdexcept(100,19):
+      zobacz deklarację „std::runtime_error”
+      C:\Users\filip\source\libs\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
+      zobacz deklarację „sf::Exception”
+  
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(10,32): warning C4244: "=": konwersja z "float" do "T", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(10,32): warning C4244:         with
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(10,32): warning C4244:         [
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(10,32): warning C4244:             T=int
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(10,32): warning C4244:         ]
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(11,32): warning C4244: "=": konwersja z "float" do "T", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(11,32): warning C4244:         with
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(11,32): warning C4244:         [
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(11,32): warning C4244:             T=int
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(11,32): warning C4244:         ]
+  Player.cpp
+C:\Users\filip\source\libs\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: interfejs niebędący interfejsem dll class "std::runtime_error"użyto jako podstawowego dla interfejsu biblioteki dll class "sf::Exception"
+  (kompilowanie pliku źródłowego „src/Player.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\stdexcept(100,19):
+      zobacz deklarację „std::runtime_error”
+      C:\Users\filip\source\libs\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
+      zobacz deklarację „sf::Exception”
+  
+  tinyxml2.cpp
+C:\Users\filip\source\repos\gunmen\src\tinyxml2.cpp(2217,25): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\tinyxml2.cpp(2218,25): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
+  Generowanie kodu...
+  gunmen.vcxproj -> C:\Users\filip\source\repos\gunmen\build\gunmen.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
