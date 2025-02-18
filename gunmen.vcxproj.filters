@@ -24,9 +24,6 @@
     <ClCompile Include="src\Player.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="src\tinyxml2.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hdr\Animation.h">
@@ -35,8 +32,13 @@
     <ClInclude Include="hdr\Player.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="hdr\tinyxml2.h">
+    <ClInclude Include="hdr\SFMLOrthogonalLayer.hpp">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\maps\obozowisko.tmx">
+      <Filter>Pliki zasobów</Filter>
+    </None>
   </ItemGroup>
 </Project>

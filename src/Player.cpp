@@ -13,8 +13,8 @@ Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, 
 
 	// obliczamy wysokość proporcjonalnie do tekstury
 	float bodyWidth = 80.0f;
-	float scaleFactor = bodyWidth / animation.uvRect.size.x;  // Proporcja szerokości
-	float bodyHeight = animation.uvRect.size.y * scaleFactor;  // Skalowanie wysokości według tej samej proporcji
+	float scaleFactor = bodyWidth / animation.uvRect.width;  // Proporcja szerokości
+	float bodyHeight = animation.uvRect.height * scaleFactor;  // Skalowanie wysokości według tej samej proporcji
 
 	body.setSize(sf::Vector2f(bodyWidth, bodyHeight));  // Ustawienie nowych wymiarów
 	body.setPosition({ 206.0f, 206.0f });

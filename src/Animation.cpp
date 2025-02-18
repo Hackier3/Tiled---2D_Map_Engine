@@ -7,8 +7,8 @@ Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switch
 	currentImage.x = 0;
 
 	sf::Vector2u textureSize = texture->getSize();
-	uvRect.size.x = textureSize.x / float(imageCount.x);
-	uvRect.size.y = textureSize.y / float(imageCount.y);
+	uvRect.width = textureSize.x / float(imageCount.x);
+	uvRect.height = textureSize.y / float(imageCount.y);
 }
 
 Animation::~Animation() {
@@ -27,15 +27,15 @@ void Animation::Update(int row, float deltaTime, bool faceRight){
 		}
 	}
 	
-	uvRect.position.y = currentImage.y * uvRect.size.y;
+	uvRect.top = currentImage.y * uvRect.height;
 
-	if (faceRight){
-		uvRect.position.x = (currentImage.x + 1) * abs(uvRect.size.x);
-		uvRect.size.x = -abs(uvRect.size.x);
+	if (faceRight) {
+		uvRect.left = (currentImage.x + 1) * abs(uvRect.width);
+		uvRect.width = -abs(uvRect.width);
 	}
-	else { 	// odbicie lustrzane postaci
-		uvRect.position.x = currentImage.x * uvRect.size.x;
-		uvRect.size.x = abs(uvRect.size.x);
+	else {  // odbicie lustrzane postaci
+		uvRect.left = currentImage.x * abs(uvRect.width);
+		uvRect.width = abs(uvRect.width);
 	}
 }
 

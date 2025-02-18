@@ -1,0 +1,13 @@
+C:\Users\filip\source\repos\gunmen\build\gunmen.vcxproj.Up2Date
+C:\Users\filip\source\repos\gunmen\build\gunmen.exe
+C:\Users\filip\source\repos\gunmen\build\zstd.dll
+C:\Users\filip\source\repos\gunmen\build\pugixml.dll
+C:\Users\filip\source\repos\gunmen\build\sfml-graphics-d-2.dll
+C:\Users\filip\source\repos\gunmen\build\sfml-window-d-2.dll
+C:\Users\filip\source\repos\gunmen\build\sfml-system-d-2.dll
+C:\Users\filip\source\repos\gunmen\build\freetyped.dll
+C:\Users\filip\source\repos\gunmen\build\zlibd1.dll
+C:\Users\filip\source\repos\gunmen\build\bz2d.dll
+C:\Users\filip\source\repos\gunmen\build\libpng16d.dll
+C:\Users\filip\source\repos\gunmen\build\brotlidec.dll
+C:\Users\filip\source\repos\gunmen\build\brotlicommon.dll
