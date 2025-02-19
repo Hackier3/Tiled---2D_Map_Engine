@@ -1,37 +1,56 @@
-﻿#include <SFML/Graphics.hpp>
+﻿#include <tmxlite/Map.hpp>
+#include <tmxlite/TileLayer.hpp>
+#include <SFML/Graphics.hpp>
 #include <iostream>
-#include "hdr/Player.h"
 
-int main()
-{
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window", sf::Style::Close);
-    window.setFramerateLimit(150);
+int main() {
+    // Inicjalizacja okna SFML
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Map Viewer");
 
-    sf::Texture playerTexture;
-    if (!playerTexture.loadFromFile("resources/graphics/BODY_skeleton.png")) {
-        std::cerr << "Błąd: Nie można załadować tekstury!" << std::endl;
+    // Wczytanie mapy TMX
+    tmx::Map map;
+    if (!map.load("resources/maps/test.tmx")) {
+        std::cerr << "Failed to load the TMX map!" << std::endl;
         return -1;
     }
 
-    Player player(&playerTexture, sf::Vector2u(9, 3), 0.1f, 150.0f);
+    // Pobranie szerokości i wysokości mapy w kafelkach
+    int mapWidth = map.getTileCount().x;    // Liczba kafelków w poziomie
+    int mapHeight = map.getTileCount().y;   // Liczba kafelków w pionie
+    int tileSize = map.getTileSize().x;     // Rozmiar pojedynczego kafelka (zakładamy kwadratowe kafelki)
 
-    float deltaTime = 0.0f;
-    sf::Clock clock;
-
-    while (window.isOpen()) {
-        deltaTime = clock.restart().asSeconds();
-
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
-                window.close();
+    // Wczytanie tilesetów
+    std::vector<sf::Texture> textures;
+    for (const auto& tileset : map.getTilesets()) {
+        sf::Texture texture;
+        if (texture.loadFromFile(tileset.getImagePath())) {
+            textures.push_back(texture);
         }
+        else {
+            std::cerr << "Failed to load texture: " << tileset.getImagePath() << std::endl;
+        }
+    }
 
-        player.Update(deltaTime);
+    // Iteracja po warstwach i szukanie warstw kafelkowych
+    for (const auto& layer : map.getLayers()) {
+        if (layer->getType() == tmx::Layer::Type::Tile) {
+            const auto* tileLayer = dynamic_cast<const tmx::TileLayer*>(layer.get());
 
-        window.clear(sf::Color(150, 150, 150));
-        player.Draw(window);
-        window.display();
+            if (tileLayer) {
+                std::cout << "\n\nZnaleziono warstwę: " << tileLayer->getName() << std::endl << std::endl;
+
+                const auto& tiles = tileLayer->getTiles();
+                for (size_t i = 0; i < tiles.size(); ++i) {
+                    int tileID = tiles[i].ID;
+
+                    // Obliczanie współrzędnych kafelka na mapie
+                    int x = (i % mapWidth) ;
+                    int y = (i / mapWidth) ;
+
+                    std::cout << "Tile ID: " << tileID << " at (" << x << ", " << y << ")" << std::endl;
+                }
+            }
+        }
     }
 
     return 0;

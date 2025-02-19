@@ -1,732 +1,732 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="10">
-	<tileset firstgid="1" name="Budynki" tilewidth="156" tileheight="157" tilecount="7" columns="0">
-		<grid orientation="orthogonal" width="1" height="1"/>
-		<tile id="0">
-			<image source="../graphics/mapResources/Objects/buildings/2 Objects_PlaceForTower1.png" width="62" height="61"/>
-		</tile>
-		<tile id="1">
-			<image source="../graphics/mapResources/Objects/buildings/2 Objects_PlaceForTower2.png" width="63" height="64"/>
-		</tile>
-		<tile id="2">
-			<image source="../graphics/mapResources/Objects/buildings/3 Decor_13.png" width="43" height="54"/>
-		</tile>
-		<tile id="3">
-			<image source="../graphics/mapResources/Objects/buildings/7 House_1.png" width="116" height="112"/>
-		</tile>
-		<tile id="4">
-			<image source="../graphics/mapResources/Objects/buildings/7 House_2.png" width="156" height="135"/>
-		</tile>
-		<tile id="5">
-			<image source="../graphics/mapResources/Objects/buildings/7 House_3.png" width="147" height="157"/>
-		</tile>
-		<tile id="6">
-			<image source="../graphics/mapResources/Objects/buildings/7 House_4.png" width="154" height="149"/>
-		</tile>
-	</tileset>
-	<tileset firstgid="8" name="Cienie" tilewidth="95" tileheight="62" tilecount="6" columns="0">
-		<grid orientation="orthogonal" width="1" height="1"/>
-		<tile id="0">
-			<image source="../graphics/mapResources/Objects/shadows/1 Shadow_1.png" width="20" height="21"/>
-		</tile>
-		<tile id="1">
-			<image source="../graphics/mapResources/Objects/shadows/1 Shadow_2.png" width="29" height="25"/>
-		</tile>
-		<tile id="2">
-			<image source="../graphics/mapResources/Objects/shadows/1 Shadow_3.png" width="30" height="26"/>
-		</tile>
-		<tile id="3">
-			<image source="../graphics/mapResources/Objects/shadows/1 Shadow_4.png" width="44" height="37"/>
-		</tile>
-		<tile id="4">
-			<image source="../graphics/mapResources/Objects/shadows/1 Shadow_5.png" width="55" height="44"/>
-		</tile>
-		<tile id="5">
-			<image source="../graphics/mapResources/Objects/shadows/1 Shadow_6.png" width="95" height="62"/>
-		</tile>
-	</tileset>
-	<tileset firstgid="14" name="Kamień" tilewidth="38" tileheight="30" tilecount="22" columns="0">
-		<grid orientation="orthogonal" width="1" height="1"/>
-		<tile id="0">
-			<image source="../graphics/mapResources/Objects/stone/2 Stone_1.png" width="10" height="9"/>
-		</tile>
-		<tile id="1">
-			<image source="../graphics/mapResources/Objects/stone/2 Stone_2.png" width="9" height="7"/>
-		</tile>
-		<tile id="2">
-			<image source="../graphics/mapResources/Objects/stone/2 Stone_3.png" width="6" height="5"/>
-		</tile>
-		<tile id="3">
-			<image source="../graphics/mapResources/Objects/stone/2 Stone_4.png" width="4" height="3"/>
-		</tile>
-		<tile id="4">
-			<image source="../graphics/mapResources/Objects/stone/2 Stone_5.png" width="9" height="8"/>
-		</tile>
-		<tile id="5">
-			<image source="../graphics/mapResources/Objects/stone/2 Stone_6.png" width="11" height="9"/>
-		</tile>
-		<tile id="6">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_1.png" width="11" height="8"/>
-		</tile>
-		<tile id="7">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_2.png" width="6" height="4"/>
-		</tile>
-		<tile id="8">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_3.png" width="11" height="7"/>
-		</tile>
-		<tile id="9">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_4.png" width="13" height="8"/>
-		</tile>
-		<tile id="10">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_5.png" width="7" height="5"/>
-		</tile>
-		<tile id="11">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_6.png" width="12" height="8"/>
-		</tile>
-		<tile id="12">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_7.png" width="37" height="27"/>
-		</tile>
-		<tile id="13">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_8.png" width="38" height="23"/>
-		</tile>
-		<tile id="14">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_9.png" width="19" height="16"/>
-		</tile>
-		<tile id="15">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_10.png" width="27" height="21"/>
-		</tile>
-		<tile id="16">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_11.png" width="35" height="30"/>
-		</tile>
-		<tile id="17">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_12.png" width="29" height="22"/>
-		</tile>
-		<tile id="18">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_13.png" width="19" height="14"/>
-		</tile>
-		<tile id="19">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_14.png" width="22" height="16"/>
-		</tile>
-		<tile id="20">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_15.png" width="21" height="20"/>
-		</tile>
-		<tile id="21">
-			<image source="../graphics/mapResources/Objects/stone/4 Stone_16.png" width="22" height="17"/>
-		</tile>
-	</tileset>
-	<tileset firstgid="36" name="Krzaczki" tilewidth="66" tileheight="77" tilecount="26" columns="0">
-		<grid orientation="orthogonal" width="1" height="1"/>
-		<tile id="26">
-			<image source="../graphics/mapResources/Objects/bushes/5 Grass_1.png" width="5" height="6"/>
-		</tile>
-		<tile id="27">
-			<image source="../graphics/mapResources/Objects/bushes/5 Grass_2.png" width="9" height="6"/>
-		</tile>
-		<tile id="28">
-			<image source="../graphics/mapResources/Objects/bushes/5 Grass_3.png" width="5" height="7"/>
-		</tile>
-		<tile id="29">
-			<image source="../graphics/mapResources/Objects/bushes/5 Grass_4.png" width="8" height="5"/>
-		</tile>
-		<tile id="30">
-			<image source="../graphics/mapResources/Objects/bushes/5 Grass_5.png" width="6" height="10"/>
-		</tile>
-		<tile id="31">
-			<image source="../graphics/mapResources/Objects/bushes/5 Grass_6.png" width="5" height="8"/>
-		</tile>
-		<tile id="32">
-			<image source="../graphics/mapResources/Objects/bushes/6 Flower_2.png" width="6" height="5"/>
-		</tile>
-		<tile id="33">
-			<image source="../graphics/mapResources/Objects/bushes/6 Flower_3.png" width="5" height="5"/>
-		</tile>
-		<tile id="34">
-			<image source="../graphics/mapResources/Objects/bushes/6 Flower_4.png" width="6" height="5"/>
-		</tile>
-		<tile id="35">
-			<image source="../graphics/mapResources/Objects/bushes/6 Flower_5.png" width="6" height="4"/>
-		</tile>
-		<tile id="36">
-			<image source="../graphics/mapResources/Objects/bushes/6 Flower_6.png" width="6" height="5"/>
-		</tile>
-		<tile id="37">
-			<image source="../graphics/mapResources/Objects/bushes/6 Flower_7.png" width="8" height="6"/>
-		</tile>
-		<tile id="38">
-			<image source="../graphics/mapResources/Objects/bushes/6 Flower_8.png" width="7" height="6"/>
-		</tile>
-		<tile id="39">
-			<image source="../graphics/mapResources/Objects/bushes/6 Flower_9.png" width="8" height="7"/>
-		</tile>
-		<tile id="40">
-			<image source="../graphics/mapResources/Objects/bushes/6 Flower_10.png" width="6" height="4"/>
-		</tile>
-		<tile id="41">
-			<image source="../graphics/mapResources/Objects/bushes/6 Flower_11.png" width="6" height="5"/>
-		</tile>
-		<tile id="42">
-			<image source="../graphics/mapResources/Objects/bushes/6 Flower_12.png" width="8" height="7"/>
-		</tile>
-		<tile id="43">
-			<image source="../graphics/mapResources/Objects/bushes/6 Flower_kwiat1.png" width="6" height="6"/>
-		</tile>
-		<tile id="44">
-			<image source="../graphics/mapResources/Objects/bushes/7 Decor_Tree1.png" width="66" height="77"/>
-		</tile>
-		<tile id="45">
-			<image source="../graphics/mapResources/Objects/bushes/7 Decor_Tree2.png" width="29" height="26"/>
-		</tile>
-		<tile id="46">
-			<image source="../graphics/mapResources/Objects/bushes/krzaczki_1.png" width="26" height="23"/>
-		</tile>
-		<tile id="47">
-			<image source="../graphics/mapResources/Objects/bushes/krzaczki_2.png" width="37" height="26"/>
-			<objectgroup draworder="index" id="2">
-				<object id="1" x="17.0909" y="0.727273" width="8.36364" height="25.6364"/>
-				<object id="2" x="25.8182" y="6" width="4.36364" height="19.6364"/>
-				<object id="3" x="31.4545" y="11.2727" width="5.27273" height="8.90909"/>
-				<object id="4" x="13.6364" y="2.54545" width="2.54545" height="20.5455"/>
-				<object id="5" x="1.09091" y="11.8182" width="11.0909" height="6.18182"/>
-				<object id="6" x="2" y="18.7273" width="10.7273" height="4.18182"/>
-				<object id="7" x="4.54545" y="6.36364" width="8.90909" height="6.18182"/>
-				<object id="8" x="0" y="0" width="37" height="26"/>
-			</objectgroup>
-		</tile>
-		<tile id="48">
-			<image source="../graphics/mapResources/Objects/bushes/krzaczki_3.png" width="33" height="22"/>
-		</tile>
-		<tile id="49">
-			<image source="../graphics/mapResources/Objects/bushes/krzaczki_4.png" width="39" height="25"/>
-		</tile>
-		<tile id="50">
-			<image source="../graphics/mapResources/Objects/bushes/krzaczki_5.png" width="41" height="25"/>
-		</tile>
-		<tile id="51">
-			<image source="../graphics/mapResources/Objects/bushes/krzaczki_6.png" width="40" height="26"/>
-		</tile>
-	</tileset>
-	<tileset firstgid="88" name="Ozdoby" tilewidth="73" tileheight="71" tilecount="67" columns="0">
-		<grid orientation="orthogonal" width="1" height="1"/>
-		<tile id="0">
-			<image source="../graphics/mapResources/Objects/decorations/2 Fence_1.png" width="27" height="15"/>
-		</tile>
-		<tile id="1">
-			<image source="../graphics/mapResources/Objects/decorations/2 Fence_2.png" width="25" height="19"/>
-		</tile>
-		<tile id="2">
-			<image source="../graphics/mapResources/Objects/decorations/2 Fence_3.png" width="26" height="16"/>
-		</tile>
-		<tile id="3">
-			<image source="../graphics/mapResources/Objects/decorations/2 Fence_4.png" width="24" height="18"/>
-		</tile>
-		<tile id="4">
-			<image source="../graphics/mapResources/Objects/decorations/2 Fence_5.png" width="15" height="5"/>
-		</tile>
-		<tile id="5">
-			<image source="../graphics/mapResources/Objects/decorations/2 Fence_6.png" width="12" height="15"/>
-		</tile>
-		<tile id="6">
-			<image source="../graphics/mapResources/Objects/decorations/2 Fence_7.png" width="7" height="31"/>
-		</tile>
-		<tile id="7">
-			<image source="../graphics/mapResources/Objects/decorations/2 Fence_8.png" width="17" height="24"/>
-		</tile>
-		<tile id="8">
-			<image source="../graphics/mapResources/Objects/decorations/2 Fence_9.png" width="5" height="8"/>
-		</tile>
-		<tile id="9">
-			<image source="../graphics/mapResources/Objects/decorations/2 Fence_10.png" width="17" height="10"/>
-		</tile>
-		<tile id="10">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_1.png" width="48" height="26"/>
-		</tile>
-		<tile id="11">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_2.png" width="41" height="38"/>
-		</tile>
-		<tile id="12">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_3.png" width="19" height="21"/>
-		</tile>
-		<tile id="13">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_4.png" width="15" height="13"/>
-		</tile>
-		<tile id="14">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_5.png" width="26" height="17"/>
-		</tile>
-		<tile id="15">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_6.png" width="14" height="19"/>
-		</tile>
-		<tile id="16">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_7.png" width="20" height="14"/>
-		</tile>
-		<tile id="17">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_8.png" width="28" height="42"/>
-			<objectgroup draworder="index" id="2">
-				<object id="1" x="3.88664" y="0.107962" width="4.75034" height="40.054"/>
-				<object id="2" x="0.431849" y="25.0472" width="3.34683" height="16.8421"/>
-				<object id="3" x="19.1093" y="0.215924" width="4.64238" height="39.6221"/>
-				<object id="4" x="22.2402" y="25.1552" width="5.722" height="16.3023"/>
-				<object id="5" x="8.8529" y="15.2227" width="9.93252" height="24.6154"/>
-			</objectgroup>
-		</tile>
-		<tile id="18">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_9.png" width="16" height="40"/>
-		</tile>
-		<tile id="19">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_10.png" width="17" height="40"/>
-		</tile>
-		<tile id="20">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_11.png" width="21" height="40"/>
-		</tile>
-		<tile id="21">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_12.png" width="20" height="23"/>
-		</tile>
-		<tile id="22">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_14.png" width="23" height="21"/>
-		</tile>
-		<tile id="23">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_15.png" width="23" height="21"/>
-		</tile>
-		<tile id="24">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_16.png" width="23" height="21"/>
-		</tile>
-		<tile id="25">
-			<image source="../graphics/mapResources/Objects/decorations/3 Decor_17.png" width="23" height="21"/>
-		</tile>
-		<tile id="26">
-			<image source="../graphics/mapResources/Objects/decorations/3 Pointer_1.png" width="20" height="36"/>
-		</tile>
-		<tile id="27">
-			<image source="../graphics/mapResources/Objects/decorations/3 Pointer_2.png" width="14" height="35"/>
-		</tile>
-		<tile id="28">
-			<image source="../graphics/mapResources/Objects/decorations/3 Pointer_3.png" width="16" height="36"/>
-		</tile>
-		<tile id="29">
-			<image source="../graphics/mapResources/Objects/decorations/3 Pointer_4.png" width="24" height="36"/>
-		</tile>
-		<tile id="30">
-			<image source="../graphics/mapResources/Objects/decorations/3 Pointer_5.png" width="24" height="16"/>
-		</tile>
-		<tile id="31">
-			<image source="../graphics/mapResources/Objects/decorations/3 Pointer_6.png" width="15" height="10"/>
-		</tile>
-		<tile id="32">
-			<image source="../graphics/mapResources/Objects/decorations/4 Box_1.png" width="20" height="22"/>
-		</tile>
-		<tile id="33">
-			<image source="../graphics/mapResources/Objects/decorations/4 Box_2.png" width="20" height="22"/>
-		</tile>
-		<tile id="34">
-			<image source="../graphics/mapResources/Objects/decorations/4 Box_3.png" width="16" height="21"/>
-		</tile>
-		<tile id="35">
-			<image source="../graphics/mapResources/Objects/decorations/4 Box_4.png" width="16" height="22"/>
-		</tile>
-		<tile id="36">
-			<image source="../graphics/mapResources/Objects/decorations/4 Box_5.png" width="18" height="25"/>
-		</tile>
-		<tile id="37">
-			<image source="../graphics/mapResources/Objects/decorations/6 Tent_1.png" width="73" height="65"/>
-		</tile>
-		<tile id="38">
-			<image source="../graphics/mapResources/Objects/decorations/6 Tent_2.png" width="64" height="61"/>
-		</tile>
-		<tile id="39">
-			<image source="../graphics/mapResources/Objects/decorations/6 Tent_3.png" width="65" height="62"/>
-		</tile>
-		<tile id="40">
-			<image source="../graphics/mapResources/Objects/decorations/6 Tent_4.png" width="64" height="71"/>
-			<objectgroup draworder="index" id="2">
-				<object id="1" x="2.33333" y="55" width="7" height="15.6667"/>
-				<object id="2" x="54.3333" y="57.3333" width="6.33333" height="13.3333"/>
-			</objectgroup>
-		</tile>
-		<tile id="41">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Box1.png" width="17" height="16"/>
-		</tile>
-		<tile id="42">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Box2.png" width="18" height="18"/>
-		</tile>
-		<tile id="43">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Box3.png" width="19" height="18"/>
-		</tile>
-		<tile id="44">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Box4.png" width="14" height="16"/>
-		</tile>
-		<tile id="45">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Dirt1.png" width="10" height="10"/>
-		</tile>
-		<tile id="46">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Dirt2.png" width="16" height="14"/>
-		</tile>
-		<tile id="47">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Dirt3.png" width="8" height="9"/>
-		</tile>
-		<tile id="48">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Dirt4.png" width="9" height="6"/>
-		</tile>
-		<tile id="49">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Dirt5.png" width="8" height="7"/>
-		</tile>
-		<tile id="50">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Dirt6.png" width="15" height="14"/>
-		</tile>
-		<tile id="51">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Lamp1.png" width="20" height="35"/>
-		</tile>
-		<tile id="52">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Lamp2.png" width="11" height="35"/>
-		</tile>
-		<tile id="53">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Lamp3.png" width="13" height="35"/>
-		</tile>
-		<tile id="54">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Lamp4.png" width="27" height="17"/>
-		</tile>
-		<tile id="55">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Lamp5.png" width="19" height="14"/>
-		</tile>
-		<tile id="56">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Lamp6.png" width="16" height="22"/>
-		</tile>
-		<tile id="57">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Log1.png" width="34" height="21"/>
-		</tile>
-		<tile id="58">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Log2.png" width="33" height="32"/>
-		</tile>
-		<tile id="59">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Log3.png" width="45" height="14"/>
-		</tile>
-		<tile id="60">
-			<image source="../graphics/mapResources/Objects/decorations/7 Decor_Log4.png" width="11" height="33"/>
-		</tile>
-		<tile id="61">
-			<image source="../graphics/mapResources/Objects/decorations/8 Camp_1.png" width="57" height="36"/>
-		</tile>
-		<tile id="62">
-			<image source="../graphics/mapResources/Objects/decorations/8 Camp_2.png" width="36" height="51"/>
-		</tile>
-		<tile id="63">
-			<image source="../graphics/mapResources/Objects/decorations/8 Camp_3.png" width="53" height="34"/>
-		</tile>
-		<tile id="64">
-			<image source="../graphics/mapResources/Objects/decorations/8 Camp_4.png" width="56" height="38"/>
-		</tile>
-		<tile id="65">
-			<image source="../graphics/mapResources/Objects/decorations/8 Camp_5.png" width="22" height="14"/>
-		</tile>
-		<tile id="66">
-			<image source="../graphics/mapResources/Objects/decorations/8 Camp_6.png" width="22" height="13"/>
-		</tile>
-	</tileset>
-	<tileset firstgid="155" name="Grunt" tilewidth="32" tileheight="32" tilecount="64" columns="8">
-		<image source="../graphics/mapResources/Tiles/FieldsTileset.png" width="256" height="256"/>
-		<wangsets>
-			<wangset name="kamien" type="mixed" tile="22">
-				<wangcolor name="kamien" color="#ff0000" tile="-1" probability="1"/>
-				<wangtile tileid="0" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="1" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="2" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="3" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="4" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="5" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="6" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="7" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="8" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="9" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="10" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="11" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="12" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="13" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="14" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="15" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="16" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="17" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="18" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="19" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="20" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="21" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="22" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="23" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="24" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="25" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="26" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="27" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="28" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="29" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="30" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="31" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="32" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="33" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="34" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="35" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="36" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="38" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="39" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="40" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="41" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="42" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="43" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="44" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="45" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="46" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="47" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="48" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="49" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="50" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="51" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="52" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="53" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="54" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="55" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="56" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="57" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="58" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="59" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="60" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="61" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="62" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="63" wangid="1,1,1,1,1,1,1,1"/>
-			</wangset>
-			<wangset name="trawa" type="mixed" tile="37">
-				<wangcolor name="" color="#ff0000" tile="-1" probability="1"/>
-				<wangtile tileid="1" wangid="0,0,0,1,1,1,0,0"/>
-				<wangtile tileid="5" wangid="1,1,0,0,0,0,0,1"/>
-				<wangtile tileid="7" wangid="1,1,0,1,0,0,0,1"/>
-				<wangtile tileid="8" wangid="0,0,0,1,0,0,0,0"/>
-				<wangtile tileid="9" wangid="1,0,0,0,0,0,0,1"/>
-				<wangtile tileid="16" wangid="0,0,0,1,0,0,0,0"/>
-				<wangtile tileid="21" wangid="0,0,0,0,0,1,0,0"/>
-				<wangtile tileid="23" wangid="0,0,0,1,0,0,0,0"/>
-				<wangtile tileid="24" wangid="0,0,1,0,0,0,0,0"/>
-				<wangtile tileid="25" wangid="0,0,0,0,0,1,0,0"/>
-				<wangtile tileid="27" wangid="0,0,0,1,0,1,0,0"/>
-				<wangtile tileid="29" wangid="0,1,0,1,1,1,0,0"/>
-				<wangtile tileid="34" wangid="0,1,0,0,0,0,0,0"/>
-				<wangtile tileid="37" wangid="1,1,1,1,1,1,1,1"/>
-				<wangtile tileid="40" wangid="0,0,0,0,0,1,0,0"/>
-				<wangtile tileid="41" wangid="0,1,1,1,0,0,0,0"/>
-				<wangtile tileid="43" wangid="0,0,0,1,0,1,0,0"/>
-				<wangtile tileid="46" wangid="1,0,0,1,0,1,0,1"/>
-				<wangtile tileid="54" wangid="0,1,0,0,0,0,0,0"/>
-				<wangtile tileid="55" wangid="0,1,0,0,0,0,0,0"/>
-				<wangtile tileid="61" wangid="0,0,0,0,0,1,1,1"/>
-			</wangset>
-		</wangsets>
-	</tileset>
-	<tileset firstgid="219" name="Płot obronny" tilewidth="32" tileheight="32" tilecount="64" columns="8">
-		<image source="../graphics/mapResources/TilesWood/Tileset2.png" width="256" height="256"/>
-	</tileset>
-	<tileset firstgid="283" name="Animacje" tilewidth="32" tileheight="64" tilecount="42" columns="0">
-		<grid orientation="orthogonal" width="1" height="1"/>
-		<tile id="5">
-			<image source="../graphics/mapResources/Animations/campfire/1_slice_1.png" width="32" height="64"/>
-			<objectgroup draworder="index" id="2">
-				<object id="1" x="5.49836" y="51.3977" width="20.081" height="10.7577"/>
-			</objectgroup>
-			<animation>
-				<frame tileid="5" duration="200"/>
-				<frame tileid="6" duration="200"/>
-				<frame tileid="7" duration="200"/>
-				<frame tileid="8" duration="200"/>
-				<frame tileid="9" duration="200"/>
-				<frame tileid="10" duration="200"/>
-			</animation>
-		</tile>
-		<tile id="6">
-			<image source="../graphics/mapResources/Animations/campfire/1_slice_2.png" width="32" height="64"/>
-		</tile>
-		<tile id="7">
-			<image source="../graphics/mapResources/Animations/campfire/1_slice_3.png" width="32" height="64"/>
-		</tile>
-		<tile id="8">
-			<image source="../graphics/mapResources/Animations/campfire/1_slice_4.png" width="32" height="64"/>
-		</tile>
-		<tile id="9">
-			<image source="../graphics/mapResources/Animations/campfire/1_slice_5.png" width="32" height="64"/>
-		</tile>
-		<tile id="10">
-			<image source="../graphics/mapResources/Animations/campfire/1_slice_6.png" width="32" height="64"/>
-		</tile>
-		<tile id="11">
-			<image source="../graphics/mapResources/Animations/campfire/2_slice_1.png" width="32" height="32"/>
-			<animation>
-				<frame tileid="11" duration="200"/>
-				<frame tileid="12" duration="200"/>
-				<frame tileid="13" duration="200"/>
-				<frame tileid="14" duration="200"/>
-				<frame tileid="15" duration="200"/>
-				<frame tileid="16" duration="200"/>
-			</animation>
-		</tile>
-		<tile id="12">
-			<image source="../graphics/mapResources/Animations/campfire/2_slice_2.png" width="32" height="32"/>
-		</tile>
-		<tile id="13">
-			<image source="../graphics/mapResources/Animations/campfire/2_slice_3.png" width="32" height="32"/>
-		</tile>
-		<tile id="14">
-			<image source="../graphics/mapResources/Animations/campfire/2_slice_4.png" width="32" height="32"/>
-		</tile>
-		<tile id="15">
-			<image source="../graphics/mapResources/Animations/campfire/2_slice_5.png" width="32" height="32"/>
-		</tile>
-		<tile id="16">
-			<image source="../graphics/mapResources/Animations/campfire/2_slice_6.png" width="32" height="32"/>
-		</tile>
-		<tile id="17">
-			<image source="../graphics/mapResources/Animations/flag/1_slice_1.png" width="32" height="64"/>
-			<objectgroup draworder="index" id="2">
-				<object id="2" x="12.8191" y="53.0947" width="6.04588" height="10.9477"/>
-			</objectgroup>
-			<animation>
-				<frame tileid="17" duration="200"/>
-				<frame tileid="18" duration="200"/>
-				<frame tileid="19" duration="200"/>
-				<frame tileid="20" duration="200"/>
-				<frame tileid="21" duration="200"/>
-				<frame tileid="22" duration="200"/>
-			</animation>
-		</tile>
-		<tile id="18">
-			<image source="../graphics/mapResources/Animations/flag/1_slice_2.png" width="32" height="64"/>
-		</tile>
-		<tile id="19">
-			<image source="../graphics/mapResources/Animations/flag/1_slice_3.png" width="32" height="64"/>
-		</tile>
-		<tile id="20">
-			<image source="../graphics/mapResources/Animations/flag/1_slice_4.png" width="32" height="64"/>
-		</tile>
-		<tile id="21">
-			<image source="../graphics/mapResources/Animations/flag/1_slice_5.png" width="32" height="64"/>
-		</tile>
-		<tile id="22">
-			<image source="../graphics/mapResources/Animations/flag/1_slice_6.png" width="32" height="64"/>
-		</tile>
-		<tile id="23">
-			<image source="../graphics/mapResources/Animations/flag/2_slice_1.png" width="32" height="64"/>
-			<animation>
-				<frame tileid="23" duration="200"/>
-				<frame tileid="24" duration="200"/>
-				<frame tileid="25" duration="200"/>
-				<frame tileid="26" duration="200"/>
-				<frame tileid="27" duration="200"/>
-				<frame tileid="28" duration="200"/>
-			</animation>
-		</tile>
-		<tile id="24">
-			<image source="../graphics/mapResources/Animations/flag/2_slice_2.png" width="32" height="64"/>
-		</tile>
-		<tile id="25">
-			<image source="../graphics/mapResources/Animations/flag/2_slice_3.png" width="32" height="64"/>
-		</tile>
-		<tile id="26">
-			<image source="../graphics/mapResources/Animations/flag/2_slice_4.png" width="32" height="64"/>
-		</tile>
-		<tile id="27">
-			<image source="../graphics/mapResources/Animations/flag/2_slice_5.png" width="32" height="64"/>
-		</tile>
-		<tile id="28">
-			<image source="../graphics/mapResources/Animations/flag/2_slice_6.png" width="32" height="64"/>
-		</tile>
-		<tile id="29">
-			<image source="../graphics/mapResources/Animations/flag/3_slice_1.png" width="32" height="64"/>
-			<objectgroup draworder="index" id="2">
-				<object id="1" x="13.068" y="53.1625" width="6.04588" height="10.9477"/>
-			</objectgroup>
-			<animation>
-				<frame tileid="29" duration="200"/>
-				<frame tileid="30" duration="200"/>
-				<frame tileid="31" duration="200"/>
-				<frame tileid="32" duration="200"/>
-				<frame tileid="33" duration="200"/>
-				<frame tileid="34" duration="200"/>
-			</animation>
-		</tile>
-		<tile id="30">
-			<image source="../graphics/mapResources/Animations/flag/3_slice_2.png" width="32" height="64"/>
-		</tile>
-		<tile id="31">
-			<image source="../graphics/mapResources/Animations/flag/3_slice_3.png" width="32" height="64"/>
-		</tile>
-		<tile id="32">
-			<image source="../graphics/mapResources/Animations/flag/3_slice_4.png" width="32" height="64"/>
-		</tile>
-		<tile id="33">
-			<image source="../graphics/mapResources/Animations/flag/3_slice_5.png" width="32" height="64"/>
-		</tile>
-		<tile id="34">
-			<image source="../graphics/mapResources/Animations/flag/3_slice_6.png" width="32" height="64"/>
-		</tile>
-		<tile id="35">
-			<image source="../graphics/mapResources/Animations/flag/4_slice_1.png" width="32" height="64"/>
-			<animation>
-				<frame tileid="35" duration="200"/>
-				<frame tileid="36" duration="200"/>
-				<frame tileid="37" duration="200"/>
-				<frame tileid="38" duration="200"/>
-				<frame tileid="39" duration="200"/>
-				<frame tileid="40" duration="200"/>
-			</animation>
-		</tile>
-		<tile id="36">
-			<image source="../graphics/mapResources/Animations/flag/4_slice_2.png" width="32" height="64"/>
-		</tile>
-		<tile id="37">
-			<image source="../graphics/mapResources/Animations/flag/4_slice_3.png" width="32" height="64"/>
-		</tile>
-		<tile id="38">
-			<image source="../graphics/mapResources/Animations/flag/4_slice_4.png" width="32" height="64"/>
-		</tile>
-		<tile id="39">
-			<image source="../graphics/mapResources/Animations/flag/4_slice_5.png" width="32" height="64"/>
-		</tile>
-		<tile id="40">
-			<image source="../graphics/mapResources/Animations/flag/4_slice_6.png" width="32" height="64"/>
-		</tile>
-		<tile id="41">
-			<image source="../graphics/mapResources/Animations/flag/5_slice_1.png" width="32" height="64"/>
-			<animation>
-				<frame tileid="41" duration="200"/>
-				<frame tileid="42" duration="200"/>
-				<frame tileid="43" duration="200"/>
-				<frame tileid="44" duration="200"/>
-				<frame tileid="45" duration="200"/>
-				<frame tileid="46" duration="200"/>
-			</animation>
-		</tile>
-		<tile id="42">
-			<image source="../graphics/mapResources/Animations/flag/5_slice_2.png" width="32" height="64"/>
-		</tile>
-		<tile id="43">
-			<image source="../graphics/mapResources/Animations/flag/5_slice_3.png" width="32" height="64"/>
-		</tile>
-		<tile id="44">
-			<image source="../graphics/mapResources/Animations/flag/5_slice_4.png" width="32" height="64"/>
-		</tile>
-		<tile id="45">
-			<image source="../graphics/mapResources/Animations/flag/5_slice_5.png" width="32" height="64"/>
-		</tile>
-		<tile id="46">
-			<image source="../graphics/mapResources/Animations/flag/5_slice_6.png" width="32" height="64"/>
-		</tile>
-	</tileset>
-	<group id="5" name="underground">
-		<layer id="1" name="podłoże" width="30" height="30">
-			<data encoding="base64" compression="zlib">
-				eJztlE0OgjAQRntUDuaCqAkajSb+IAtJSGQhxoWyMp7GGRhwQkuVtCXRsHihlimvXwdJhBDJ93gEH/M5V/Tp0vlcupvOPvLq+snnXXhVufvoqyr7v3qV5+sDMcH3d3GcfQosgAPzIzlwatTa9KJzDizJPQPOQASkb7dVL8+6YtyAtSjP+iivM3k3ai96Arri7x2wBa5Ui+ftO8gbMj/fSwaMgAldNc/pkr2oxZ7G9NwdjRe0l6r2DozpfkdH6z4D5tuLss85earaE90fW/TiOCDfhnJjVnyXM6p9AE95nYm/WFv1scoUKWpDIf2XTd/pej2ed6qp190z8HqPL+oU304bmVW9k+Ytfb9U/WqObZ3vp7wuPG3ePlwDAz/BC7nZxgU=
-			</data>
-		</layer>
-		<layer id="2" name="warstwa1" width="30" height="30">
-			<data encoding="base64" compression="zlib">
-				eJxjYBgF5IJACvT6E6HGkwLz6QmCBsBOFxLU2qHxw6jpkEEE/AbaAVQECowD7QLigPtAO2AUjIJRgAHCB9oBQxQMl/IMW9sshAxzQil1yCgYEOBBof7hkg9IBQAZyQTx
-			</data>
-		</layer>
-	</group>
-	<layer id="6" name="upground" width="30" height="30">
-		<data encoding="base64" compression="zlib">
-			eJxjYBgFo2AUjILhBXQYqaNmFAwN0DDQDhgFAw4yqWCGBRFlAjFqRsEoGAWjYKgBAETtAbY=
-		</data>
-	</layer>
+ <tileset firstgid="1" name="Budynki" tilewidth="156" tileheight="157" tilecount="7" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image source="../graphics/mapResources/Objects/buildings/2 Objects_PlaceForTower1.png" width="62" height="61"/>
+  </tile>
+  <tile id="1">
+   <image source="../graphics/mapResources/Objects/buildings/2 Objects_PlaceForTower2.png" width="63" height="64"/>
+  </tile>
+  <tile id="2">
+   <image source="../graphics/mapResources/Objects/buildings/3 Decor_13.png" width="43" height="54"/>
+  </tile>
+  <tile id="3">
+   <image source="../graphics/mapResources/Objects/buildings/7 House_1.png" width="116" height="112"/>
+  </tile>
+  <tile id="4">
+   <image source="../graphics/mapResources/Objects/buildings/7 House_2.png" width="156" height="135"/>
+  </tile>
+  <tile id="5">
+   <image source="../graphics/mapResources/Objects/buildings/7 House_3.png" width="147" height="157"/>
+  </tile>
+  <tile id="6">
+   <image source="../graphics/mapResources/Objects/buildings/7 House_4.png" width="154" height="149"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="8" name="Cienie" tilewidth="95" tileheight="62" tilecount="6" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image source="../graphics/mapResources/Objects/shadows/1 Shadow_1.png" width="20" height="21"/>
+  </tile>
+  <tile id="1">
+   <image source="../graphics/mapResources/Objects/shadows/1 Shadow_2.png" width="29" height="25"/>
+  </tile>
+  <tile id="2">
+   <image source="../graphics/mapResources/Objects/shadows/1 Shadow_3.png" width="30" height="26"/>
+  </tile>
+  <tile id="3">
+   <image source="../graphics/mapResources/Objects/shadows/1 Shadow_4.png" width="44" height="37"/>
+  </tile>
+  <tile id="4">
+   <image source="../graphics/mapResources/Objects/shadows/1 Shadow_5.png" width="55" height="44"/>
+  </tile>
+  <tile id="5">
+   <image source="../graphics/mapResources/Objects/shadows/1 Shadow_6.png" width="95" height="62"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="14" name="Kamień" tilewidth="38" tileheight="30" tilecount="22" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image source="../graphics/mapResources/Objects/stone/2 Stone_1.png" width="10" height="9"/>
+  </tile>
+  <tile id="1">
+   <image source="../graphics/mapResources/Objects/stone/2 Stone_2.png" width="9" height="7"/>
+  </tile>
+  <tile id="2">
+   <image source="../graphics/mapResources/Objects/stone/2 Stone_3.png" width="6" height="5"/>
+  </tile>
+  <tile id="3">
+   <image source="../graphics/mapResources/Objects/stone/2 Stone_4.png" width="4" height="3"/>
+  </tile>
+  <tile id="4">
+   <image source="../graphics/mapResources/Objects/stone/2 Stone_5.png" width="9" height="8"/>
+  </tile>
+  <tile id="5">
+   <image source="../graphics/mapResources/Objects/stone/2 Stone_6.png" width="11" height="9"/>
+  </tile>
+  <tile id="6">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_1.png" width="11" height="8"/>
+  </tile>
+  <tile id="7">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_2.png" width="6" height="4"/>
+  </tile>
+  <tile id="8">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_3.png" width="11" height="7"/>
+  </tile>
+  <tile id="9">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_4.png" width="13" height="8"/>
+  </tile>
+  <tile id="10">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_5.png" width="7" height="5"/>
+  </tile>
+  <tile id="11">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_6.png" width="12" height="8"/>
+  </tile>
+  <tile id="12">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_7.png" width="37" height="27"/>
+  </tile>
+  <tile id="13">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_8.png" width="38" height="23"/>
+  </tile>
+  <tile id="14">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_9.png" width="19" height="16"/>
+  </tile>
+  <tile id="15">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_10.png" width="27" height="21"/>
+  </tile>
+  <tile id="16">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_11.png" width="35" height="30"/>
+  </tile>
+  <tile id="17">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_12.png" width="29" height="22"/>
+  </tile>
+  <tile id="18">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_13.png" width="19" height="14"/>
+  </tile>
+  <tile id="19">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_14.png" width="22" height="16"/>
+  </tile>
+  <tile id="20">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_15.png" width="21" height="20"/>
+  </tile>
+  <tile id="21">
+   <image source="../graphics/mapResources/Objects/stone/4 Stone_16.png" width="22" height="17"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="36" name="Krzaczki" tilewidth="66" tileheight="77" tilecount="26" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="26">
+   <image source="../graphics/mapResources/Objects/bushes/5 Grass_1.png" width="5" height="6"/>
+  </tile>
+  <tile id="27">
+   <image source="../graphics/mapResources/Objects/bushes/5 Grass_2.png" width="9" height="6"/>
+  </tile>
+  <tile id="28">
+   <image source="../graphics/mapResources/Objects/bushes/5 Grass_3.png" width="5" height="7"/>
+  </tile>
+  <tile id="29">
+   <image source="../graphics/mapResources/Objects/bushes/5 Grass_4.png" width="8" height="5"/>
+  </tile>
+  <tile id="30">
+   <image source="../graphics/mapResources/Objects/bushes/5 Grass_5.png" width="6" height="10"/>
+  </tile>
+  <tile id="31">
+   <image source="../graphics/mapResources/Objects/bushes/5 Grass_6.png" width="5" height="8"/>
+  </tile>
+  <tile id="32">
+   <image source="../graphics/mapResources/Objects/bushes/6 Flower_2.png" width="6" height="5"/>
+  </tile>
+  <tile id="33">
+   <image source="../graphics/mapResources/Objects/bushes/6 Flower_3.png" width="5" height="5"/>
+  </tile>
+  <tile id="34">
+   <image source="../graphics/mapResources/Objects/bushes/6 Flower_4.png" width="6" height="5"/>
+  </tile>
+  <tile id="35">
+   <image source="../graphics/mapResources/Objects/bushes/6 Flower_5.png" width="6" height="4"/>
+  </tile>
+  <tile id="36">
+   <image source="../graphics/mapResources/Objects/bushes/6 Flower_6.png" width="6" height="5"/>
+  </tile>
+  <tile id="37">
+   <image source="../graphics/mapResources/Objects/bushes/6 Flower_7.png" width="8" height="6"/>
+  </tile>
+  <tile id="38">
+   <image source="../graphics/mapResources/Objects/bushes/6 Flower_8.png" width="7" height="6"/>
+  </tile>
+  <tile id="39">
+   <image source="../graphics/mapResources/Objects/bushes/6 Flower_9.png" width="8" height="7"/>
+  </tile>
+  <tile id="40">
+   <image source="../graphics/mapResources/Objects/bushes/6 Flower_10.png" width="6" height="4"/>
+  </tile>
+  <tile id="41">
+   <image source="../graphics/mapResources/Objects/bushes/6 Flower_11.png" width="6" height="5"/>
+  </tile>
+  <tile id="42">
+   <image source="../graphics/mapResources/Objects/bushes/6 Flower_12.png" width="8" height="7"/>
+  </tile>
+  <tile id="43">
+   <image source="../graphics/mapResources/Objects/bushes/6 Flower_kwiat1.png" width="6" height="6"/>
+  </tile>
+  <tile id="44">
+   <image source="../graphics/mapResources/Objects/bushes/7 Decor_Tree1.png" width="66" height="77"/>
+  </tile>
+  <tile id="45">
+   <image source="../graphics/mapResources/Objects/bushes/7 Decor_Tree2.png" width="29" height="26"/>
+  </tile>
+  <tile id="46">
+   <image source="../graphics/mapResources/Objects/bushes/krzaczki_1.png" width="26" height="23"/>
+  </tile>
+  <tile id="47">
+   <image source="../graphics/mapResources/Objects/bushes/krzaczki_2.png" width="37" height="26"/>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="17.0909" y="0.727273" width="8.36364" height="25.6364"/>
+    <object id="2" x="25.8182" y="6" width="4.36364" height="19.6364"/>
+    <object id="3" x="31.4545" y="11.2727" width="5.27273" height="8.90909"/>
+    <object id="4" x="13.6364" y="2.54545" width="2.54545" height="20.5455"/>
+    <object id="5" x="1.09091" y="11.8182" width="11.0909" height="6.18182"/>
+    <object id="6" x="2" y="18.7273" width="10.7273" height="4.18182"/>
+    <object id="7" x="4.54545" y="6.36364" width="8.90909" height="6.18182"/>
+    <object id="8" x="0" y="0" width="37" height="26"/>
+   </objectgroup>
+  </tile>
+  <tile id="48">
+   <image source="../graphics/mapResources/Objects/bushes/krzaczki_3.png" width="33" height="22"/>
+  </tile>
+  <tile id="49">
+   <image source="../graphics/mapResources/Objects/bushes/krzaczki_4.png" width="39" height="25"/>
+  </tile>
+  <tile id="50">
+   <image source="../graphics/mapResources/Objects/bushes/krzaczki_5.png" width="41" height="25"/>
+  </tile>
+  <tile id="51">
+   <image source="../graphics/mapResources/Objects/bushes/krzaczki_6.png" width="40" height="26"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="88" name="Ozdoby" tilewidth="73" tileheight="71" tilecount="67" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image source="../graphics/mapResources/Objects/decorations/2 Fence_1.png" width="27" height="15"/>
+  </tile>
+  <tile id="1">
+   <image source="../graphics/mapResources/Objects/decorations/2 Fence_2.png" width="25" height="19"/>
+  </tile>
+  <tile id="2">
+   <image source="../graphics/mapResources/Objects/decorations/2 Fence_3.png" width="26" height="16"/>
+  </tile>
+  <tile id="3">
+   <image source="../graphics/mapResources/Objects/decorations/2 Fence_4.png" width="24" height="18"/>
+  </tile>
+  <tile id="4">
+   <image source="../graphics/mapResources/Objects/decorations/2 Fence_5.png" width="15" height="5"/>
+  </tile>
+  <tile id="5">
+   <image source="../graphics/mapResources/Objects/decorations/2 Fence_6.png" width="12" height="15"/>
+  </tile>
+  <tile id="6">
+   <image source="../graphics/mapResources/Objects/decorations/2 Fence_7.png" width="7" height="31"/>
+  </tile>
+  <tile id="7">
+   <image source="../graphics/mapResources/Objects/decorations/2 Fence_8.png" width="17" height="24"/>
+  </tile>
+  <tile id="8">
+   <image source="../graphics/mapResources/Objects/decorations/2 Fence_9.png" width="5" height="8"/>
+  </tile>
+  <tile id="9">
+   <image source="../graphics/mapResources/Objects/decorations/2 Fence_10.png" width="17" height="10"/>
+  </tile>
+  <tile id="10">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_1.png" width="48" height="26"/>
+  </tile>
+  <tile id="11">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_2.png" width="41" height="38"/>
+  </tile>
+  <tile id="12">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_3.png" width="19" height="21"/>
+  </tile>
+  <tile id="13">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_4.png" width="15" height="13"/>
+  </tile>
+  <tile id="14">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_5.png" width="26" height="17"/>
+  </tile>
+  <tile id="15">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_6.png" width="14" height="19"/>
+  </tile>
+  <tile id="16">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_7.png" width="20" height="14"/>
+  </tile>
+  <tile id="17">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_8.png" width="28" height="42"/>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="3.88664" y="0.107962" width="4.75034" height="40.054"/>
+    <object id="2" x="0.431849" y="25.0472" width="3.34683" height="16.8421"/>
+    <object id="3" x="19.1093" y="0.215924" width="4.64238" height="39.6221"/>
+    <object id="4" x="22.2402" y="25.1552" width="5.722" height="16.3023"/>
+    <object id="5" x="8.8529" y="15.2227" width="9.93252" height="24.6154"/>
+   </objectgroup>
+  </tile>
+  <tile id="18">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_9.png" width="16" height="40"/>
+  </tile>
+  <tile id="19">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_10.png" width="17" height="40"/>
+  </tile>
+  <tile id="20">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_11.png" width="21" height="40"/>
+  </tile>
+  <tile id="21">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_12.png" width="20" height="23"/>
+  </tile>
+  <tile id="22">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_14.png" width="23" height="21"/>
+  </tile>
+  <tile id="23">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_15.png" width="23" height="21"/>
+  </tile>
+  <tile id="24">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_16.png" width="23" height="21"/>
+  </tile>
+  <tile id="25">
+   <image source="../graphics/mapResources/Objects/decorations/3 Decor_17.png" width="23" height="21"/>
+  </tile>
+  <tile id="26">
+   <image source="../graphics/mapResources/Objects/decorations/3 Pointer_1.png" width="20" height="36"/>
+  </tile>
+  <tile id="27">
+   <image source="../graphics/mapResources/Objects/decorations/3 Pointer_2.png" width="14" height="35"/>
+  </tile>
+  <tile id="28">
+   <image source="../graphics/mapResources/Objects/decorations/3 Pointer_3.png" width="16" height="36"/>
+  </tile>
+  <tile id="29">
+   <image source="../graphics/mapResources/Objects/decorations/3 Pointer_4.png" width="24" height="36"/>
+  </tile>
+  <tile id="30">
+   <image source="../graphics/mapResources/Objects/decorations/3 Pointer_5.png" width="24" height="16"/>
+  </tile>
+  <tile id="31">
+   <image source="../graphics/mapResources/Objects/decorations/3 Pointer_6.png" width="15" height="10"/>
+  </tile>
+  <tile id="32">
+   <image source="../graphics/mapResources/Objects/decorations/4 Box_1.png" width="20" height="22"/>
+  </tile>
+  <tile id="33">
+   <image source="../graphics/mapResources/Objects/decorations/4 Box_2.png" width="20" height="22"/>
+  </tile>
+  <tile id="34">
+   <image source="../graphics/mapResources/Objects/decorations/4 Box_3.png" width="16" height="21"/>
+  </tile>
+  <tile id="35">
+   <image source="../graphics/mapResources/Objects/decorations/4 Box_4.png" width="16" height="22"/>
+  </tile>
+  <tile id="36">
+   <image source="../graphics/mapResources/Objects/decorations/4 Box_5.png" width="18" height="25"/>
+  </tile>
+  <tile id="37">
+   <image source="../graphics/mapResources/Objects/decorations/6 Tent_1.png" width="73" height="65"/>
+  </tile>
+  <tile id="38">
+   <image source="../graphics/mapResources/Objects/decorations/6 Tent_2.png" width="64" height="61"/>
+  </tile>
+  <tile id="39">
+   <image source="../graphics/mapResources/Objects/decorations/6 Tent_3.png" width="65" height="62"/>
+  </tile>
+  <tile id="40">
+   <image source="../graphics/mapResources/Objects/decorations/6 Tent_4.png" width="64" height="71"/>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="2.33333" y="55" width="7" height="15.6667"/>
+    <object id="2" x="54.3333" y="57.3333" width="6.33333" height="13.3333"/>
+   </objectgroup>
+  </tile>
+  <tile id="41">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Box1.png" width="17" height="16"/>
+  </tile>
+  <tile id="42">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Box2.png" width="18" height="18"/>
+  </tile>
+  <tile id="43">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Box3.png" width="19" height="18"/>
+  </tile>
+  <tile id="44">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Box4.png" width="14" height="16"/>
+  </tile>
+  <tile id="45">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Dirt1.png" width="10" height="10"/>
+  </tile>
+  <tile id="46">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Dirt2.png" width="16" height="14"/>
+  </tile>
+  <tile id="47">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Dirt3.png" width="8" height="9"/>
+  </tile>
+  <tile id="48">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Dirt4.png" width="9" height="6"/>
+  </tile>
+  <tile id="49">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Dirt5.png" width="8" height="7"/>
+  </tile>
+  <tile id="50">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Dirt6.png" width="15" height="14"/>
+  </tile>
+  <tile id="51">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Lamp1.png" width="20" height="35"/>
+  </tile>
+  <tile id="52">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Lamp2.png" width="11" height="35"/>
+  </tile>
+  <tile id="53">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Lamp3.png" width="13" height="35"/>
+  </tile>
+  <tile id="54">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Lamp4.png" width="27" height="17"/>
+  </tile>
+  <tile id="55">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Lamp5.png" width="19" height="14"/>
+  </tile>
+  <tile id="56">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Lamp6.png" width="16" height="22"/>
+  </tile>
+  <tile id="57">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Log1.png" width="34" height="21"/>
+  </tile>
+  <tile id="58">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Log2.png" width="33" height="32"/>
+  </tile>
+  <tile id="59">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Log3.png" width="45" height="14"/>
+  </tile>
+  <tile id="60">
+   <image source="../graphics/mapResources/Objects/decorations/7 Decor_Log4.png" width="11" height="33"/>
+  </tile>
+  <tile id="61">
+   <image source="../graphics/mapResources/Objects/decorations/8 Camp_1.png" width="57" height="36"/>
+  </tile>
+  <tile id="62">
+   <image source="../graphics/mapResources/Objects/decorations/8 Camp_2.png" width="36" height="51"/>
+  </tile>
+  <tile id="63">
+   <image source="../graphics/mapResources/Objects/decorations/8 Camp_3.png" width="53" height="34"/>
+  </tile>
+  <tile id="64">
+   <image source="../graphics/mapResources/Objects/decorations/8 Camp_4.png" width="56" height="38"/>
+  </tile>
+  <tile id="65">
+   <image source="../graphics/mapResources/Objects/decorations/8 Camp_5.png" width="22" height="14"/>
+  </tile>
+  <tile id="66">
+   <image source="../graphics/mapResources/Objects/decorations/8 Camp_6.png" width="22" height="13"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="155" name="Grunt" tilewidth="32" tileheight="32" tilecount="64" columns="8">
+  <image source="../graphics/mapResources/Tiles/FieldsTileset.png" width="256" height="256"/>
+  <wangsets>
+   <wangset name="kamien" type="mixed" tile="22">
+    <wangcolor name="kamien" color="#ff0000" tile="-1" probability="1"/>
+    <wangtile tileid="0" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="1" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="2" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="3" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="4" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="5" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="6" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="7" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="8" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="9" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="10" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="11" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="12" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="13" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="14" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="15" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="16" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="17" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="18" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="19" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="20" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="21" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="22" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="23" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="24" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="25" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="26" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="27" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="28" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="29" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="30" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="31" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="32" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="33" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="34" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="35" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="36" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="38" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="39" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="40" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="41" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="42" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="43" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="44" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="45" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="46" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="47" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="48" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="49" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="50" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="51" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="52" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="53" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="54" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="55" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="56" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="57" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="58" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="59" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="60" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="61" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="62" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="63" wangid="1,1,1,1,1,1,1,1"/>
+   </wangset>
+   <wangset name="trawa" type="mixed" tile="37">
+    <wangcolor name="" color="#ff0000" tile="-1" probability="1"/>
+    <wangtile tileid="1" wangid="0,0,0,1,1,1,0,0"/>
+    <wangtile tileid="5" wangid="1,1,0,0,0,0,0,1"/>
+    <wangtile tileid="7" wangid="1,1,0,1,0,0,0,1"/>
+    <wangtile tileid="8" wangid="0,0,0,1,0,0,0,0"/>
+    <wangtile tileid="9" wangid="1,0,0,0,0,0,0,1"/>
+    <wangtile tileid="16" wangid="0,0,0,1,0,0,0,0"/>
+    <wangtile tileid="21" wangid="0,0,0,0,0,1,0,0"/>
+    <wangtile tileid="23" wangid="0,0,0,1,0,0,0,0"/>
+    <wangtile tileid="24" wangid="0,0,1,0,0,0,0,0"/>
+    <wangtile tileid="25" wangid="0,0,0,0,0,1,0,0"/>
+    <wangtile tileid="27" wangid="0,0,0,1,0,1,0,0"/>
+    <wangtile tileid="29" wangid="0,1,0,1,1,1,0,0"/>
+    <wangtile tileid="34" wangid="0,1,0,0,0,0,0,0"/>
+    <wangtile tileid="37" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="40" wangid="0,0,0,0,0,1,0,0"/>
+    <wangtile tileid="41" wangid="0,1,1,1,0,0,0,0"/>
+    <wangtile tileid="43" wangid="0,0,0,1,0,1,0,0"/>
+    <wangtile tileid="46" wangid="1,0,0,1,0,1,0,1"/>
+    <wangtile tileid="54" wangid="0,1,0,0,0,0,0,0"/>
+    <wangtile tileid="55" wangid="0,1,0,0,0,0,0,0"/>
+    <wangtile tileid="61" wangid="0,0,0,0,0,1,1,1"/>
+   </wangset>
+  </wangsets>
+ </tileset>
+ <tileset firstgid="219" name="Płot obronny" tilewidth="32" tileheight="32" tilecount="64" columns="8">
+  <image source="../graphics/mapResources/TilesWood/Tileset2.png" width="256" height="256"/>
+ </tileset>
+ <tileset firstgid="283" name="Animacje" tilewidth="32" tileheight="64" tilecount="42" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="5">
+   <image source="../graphics/mapResources/Animations/campfire/1_slice_1.png" width="32" height="64"/>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="5.49836" y="51.3977" width="20.081" height="10.7577"/>
+   </objectgroup>
+   <animation>
+    <frame tileid="5" duration="200"/>
+    <frame tileid="6" duration="200"/>
+    <frame tileid="7" duration="200"/>
+    <frame tileid="8" duration="200"/>
+    <frame tileid="9" duration="200"/>
+    <frame tileid="10" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="6">
+   <image source="../graphics/mapResources/Animations/campfire/1_slice_2.png" width="32" height="64"/>
+  </tile>
+  <tile id="7">
+   <image source="../graphics/mapResources/Animations/campfire/1_slice_3.png" width="32" height="64"/>
+  </tile>
+  <tile id="8">
+   <image source="../graphics/mapResources/Animations/campfire/1_slice_4.png" width="32" height="64"/>
+  </tile>
+  <tile id="9">
+   <image source="../graphics/mapResources/Animations/campfire/1_slice_5.png" width="32" height="64"/>
+  </tile>
+  <tile id="10">
+   <image source="../graphics/mapResources/Animations/campfire/1_slice_6.png" width="32" height="64"/>
+  </tile>
+  <tile id="11">
+   <image source="../graphics/mapResources/Animations/campfire/2_slice_1.png" width="32" height="32"/>
+   <animation>
+    <frame tileid="11" duration="200"/>
+    <frame tileid="12" duration="200"/>
+    <frame tileid="13" duration="200"/>
+    <frame tileid="14" duration="200"/>
+    <frame tileid="15" duration="200"/>
+    <frame tileid="16" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="12">
+   <image source="../graphics/mapResources/Animations/campfire/2_slice_2.png" width="32" height="32"/>
+  </tile>
+  <tile id="13">
+   <image source="../graphics/mapResources/Animations/campfire/2_slice_3.png" width="32" height="32"/>
+  </tile>
+  <tile id="14">
+   <image source="../graphics/mapResources/Animations/campfire/2_slice_4.png" width="32" height="32"/>
+  </tile>
+  <tile id="15">
+   <image source="../graphics/mapResources/Animations/campfire/2_slice_5.png" width="32" height="32"/>
+  </tile>
+  <tile id="16">
+   <image source="../graphics/mapResources/Animations/campfire/2_slice_6.png" width="32" height="32"/>
+  </tile>
+  <tile id="17">
+   <image source="../graphics/mapResources/Animations/flag/1_slice_1.png" width="32" height="64"/>
+   <objectgroup draworder="index" id="2">
+    <object id="2" x="12.8191" y="53.0947" width="6.04588" height="10.9477"/>
+   </objectgroup>
+   <animation>
+    <frame tileid="17" duration="200"/>
+    <frame tileid="18" duration="200"/>
+    <frame tileid="19" duration="200"/>
+    <frame tileid="20" duration="200"/>
+    <frame tileid="21" duration="200"/>
+    <frame tileid="22" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="18">
+   <image source="../graphics/mapResources/Animations/flag/1_slice_2.png" width="32" height="64"/>
+  </tile>
+  <tile id="19">
+   <image source="../graphics/mapResources/Animations/flag/1_slice_3.png" width="32" height="64"/>
+  </tile>
+  <tile id="20">
+   <image source="../graphics/mapResources/Animations/flag/1_slice_4.png" width="32" height="64"/>
+  </tile>
+  <tile id="21">
+   <image source="../graphics/mapResources/Animations/flag/1_slice_5.png" width="32" height="64"/>
+  </tile>
+  <tile id="22">
+   <image source="../graphics/mapResources/Animations/flag/1_slice_6.png" width="32" height="64"/>
+  </tile>
+  <tile id="23">
+   <image source="../graphics/mapResources/Animations/flag/2_slice_1.png" width="32" height="64"/>
+   <animation>
+    <frame tileid="23" duration="200"/>
+    <frame tileid="24" duration="200"/>
+    <frame tileid="25" duration="200"/>
+    <frame tileid="26" duration="200"/>
+    <frame tileid="27" duration="200"/>
+    <frame tileid="28" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="24">
+   <image source="../graphics/mapResources/Animations/flag/2_slice_2.png" width="32" height="64"/>
+  </tile>
+  <tile id="25">
+   <image source="../graphics/mapResources/Animations/flag/2_slice_3.png" width="32" height="64"/>
+  </tile>
+  <tile id="26">
+   <image source="../graphics/mapResources/Animations/flag/2_slice_4.png" width="32" height="64"/>
+  </tile>
+  <tile id="27">
+   <image source="../graphics/mapResources/Animations/flag/2_slice_5.png" width="32" height="64"/>
+  </tile>
+  <tile id="28">
+   <image source="../graphics/mapResources/Animations/flag/2_slice_6.png" width="32" height="64"/>
+  </tile>
+  <tile id="29">
+   <image source="../graphics/mapResources/Animations/flag/3_slice_1.png" width="32" height="64"/>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="13.068" y="53.1625" width="6.04588" height="10.9477"/>
+   </objectgroup>
+   <animation>
+    <frame tileid="29" duration="200"/>
+    <frame tileid="30" duration="200"/>
+    <frame tileid="31" duration="200"/>
+    <frame tileid="32" duration="200"/>
+    <frame tileid="33" duration="200"/>
+    <frame tileid="34" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="30">
+   <image source="../graphics/mapResources/Animations/flag/3_slice_2.png" width="32" height="64"/>
+  </tile>
+  <tile id="31">
+   <image source="../graphics/mapResources/Animations/flag/3_slice_3.png" width="32" height="64"/>
+  </tile>
+  <tile id="32">
+   <image source="../graphics/mapResources/Animations/flag/3_slice_4.png" width="32" height="64"/>
+  </tile>
+  <tile id="33">
+   <image source="../graphics/mapResources/Animations/flag/3_slice_5.png" width="32" height="64"/>
+  </tile>
+  <tile id="34">
+   <image source="../graphics/mapResources/Animations/flag/3_slice_6.png" width="32" height="64"/>
+  </tile>
+  <tile id="35">
+   <image source="../graphics/mapResources/Animations/flag/4_slice_1.png" width="32" height="64"/>
+   <animation>
+    <frame tileid="35" duration="200"/>
+    <frame tileid="36" duration="200"/>
+    <frame tileid="37" duration="200"/>
+    <frame tileid="38" duration="200"/>
+    <frame tileid="39" duration="200"/>
+    <frame tileid="40" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="36">
+   <image source="../graphics/mapResources/Animations/flag/4_slice_2.png" width="32" height="64"/>
+  </tile>
+  <tile id="37">
+   <image source="../graphics/mapResources/Animations/flag/4_slice_3.png" width="32" height="64"/>
+  </tile>
+  <tile id="38">
+   <image source="../graphics/mapResources/Animations/flag/4_slice_4.png" width="32" height="64"/>
+  </tile>
+  <tile id="39">
+   <image source="../graphics/mapResources/Animations/flag/4_slice_5.png" width="32" height="64"/>
+  </tile>
+  <tile id="40">
+   <image source="../graphics/mapResources/Animations/flag/4_slice_6.png" width="32" height="64"/>
+  </tile>
+  <tile id="41">
+   <image source="../graphics/mapResources/Animations/flag/5_slice_1.png" width="32" height="64"/>
+   <animation>
+    <frame tileid="41" duration="200"/>
+    <frame tileid="42" duration="200"/>
+    <frame tileid="43" duration="200"/>
+    <frame tileid="44" duration="200"/>
+    <frame tileid="45" duration="200"/>
+    <frame tileid="46" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="42">
+   <image source="../graphics/mapResources/Animations/flag/5_slice_2.png" width="32" height="64"/>
+  </tile>
+  <tile id="43">
+   <image source="../graphics/mapResources/Animations/flag/5_slice_3.png" width="32" height="64"/>
+  </tile>
+  <tile id="44">
+   <image source="../graphics/mapResources/Animations/flag/5_slice_4.png" width="32" height="64"/>
+  </tile>
+  <tile id="45">
+   <image source="../graphics/mapResources/Animations/flag/5_slice_5.png" width="32" height="64"/>
+  </tile>
+  <tile id="46">
+   <image source="../graphics/mapResources/Animations/flag/5_slice_6.png" width="32" height="64"/>
+  </tile>
+ </tileset>
+ <group id="5" name="underground">
+  <layer id="1" name="podłoże" width="30" height="30">
+   <data encoding="base64" compression="zlib">
+   eJztlE0OgjAQRntUDuaCqAkajSb+IAtJSGQhxoWyMp7GGRhwQkuVtCXRsHihlimvXwdJhBDJ93gEH/M5V/Tp0vlcupvOPvLq+snnXXhVufvoqyr7v3qV5+sDMcH3d3GcfQosgAPzIzlwatTa9KJzDizJPQPOQASkb7dVL8+6YtyAtSjP+iivM3k3ai96Arri7x2wBa5Ui+ftO8gbMj/fSwaMgAldNc/pkr2oxZ7G9NwdjRe0l6r2DozpfkdH6z4D5tuLss85earaE90fW/TiOCDfhnJjVnyXM6p9AE95nYm/WFv1scoUKWpDIf2XTd/pej2ed6qp190z8HqPL+oU304bmVW9k+Ytfb9U/WqObZ3vp7wuPG3ePlwDAz/BC7nZxgU=
+  </data>
+  </layer>
+  <layer id="2" name="warstwa1" width="30" height="30">
+   <data encoding="base64" compression="zlib">
+   eJxjYBgF5IJACvT6E6HGkwLz6QmCBsBOFxLU2qHxw6jpkEEE/AbaAVQECowD7QLigPtAO2AUjIJRgAHCB9oBQxQMl/IMW9sshAxzQil1yCgYEOBBof7hkg9IBQAZyQTx
+  </data>
+  </layer>
+ </group>
+ <layer id="6" name="upground" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjILhBXQYqaNmFAwN0DDQDhgFAw4yqWCGBRFlAjFqRsEoGAWjYKgBAETtAbY=
+  </data>
+ </layer>
 </map>

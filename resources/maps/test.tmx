@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="1">
+ <tileset firstgid="1" name="FieldsTileset" tilewidth="32" tileheight="32" tilecount="64" columns="8">
+  <image source="../graphics/mapResources/Tiles/FieldsTileset.png" width="256" height="256"/>
+ </tileset>
+ <tileset firstgid="65" name="buildings" tilewidth="156" tileheight="157" tilecount="7" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image source="../graphics/mapResources/Objects/buildings/2 Objects_PlaceForTower1.png" width="62" height="61"/>
+  </tile>
+  <tile id="1">
+   <image source="../graphics/mapResources/Objects/buildings/2 Objects_PlaceForTower2.png" width="63" height="64"/>
+  </tile>
+  <tile id="2">
+   <image source="../graphics/mapResources/Objects/buildings/3 Decor_13.png" width="43" height="54"/>
+  </tile>
+  <tile id="3">
+   <image source="../graphics/mapResources/Objects/buildings/7 House_1.png" width="116" height="112"/>
+  </tile>
+  <tile id="4">
+   <image source="../graphics/mapResources/Objects/buildings/7 House_2.png" width="156" height="135"/>
+  </tile>
+  <tile id="5">
+   <image source="../graphics/mapResources/Objects/buildings/7 House_3.png" width="147" height="157"/>
+  </tile>
+  <tile id="6">
+   <image source="../graphics/mapResources/Objects/buildings/7 House_4.png" width="154" height="149"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="Warstwa Kafelków 1" width="30" height="30" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztzaENAAAMw7Be0/9PHNgDA4O2FJwm6bFP1+f3FwAAgDX3pANF
+  </data>
+ </layer>
+ <layer id="2" name="Warstwa Kafelków obiektow" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztzjERAEAIBDGsMRTv39EboL+CxMBuVUaHuhPqbl56AAAAOO0DbqoAzA==
+  </data>
+ </layer>
+</map>
