@@ -1,6 +1,32 @@
-﻿  gunmen.cpp
-C:\Users\filip\source\repos\gunmen\gunmen.cpp(71,27): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
-     Trwa tworzenie biblioteki C:\Users\filip\source\repos\gunmen\out\x64\Debug\gunmen.lib i obiektu C:\Users\filip\source\repos\gunmen\out\x64\Debug\gunmen.exp
+﻿  map.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,16): warning C4244: "inicjowanie": konwersja z "_Ty" do "_Ty1", możliwa utrata danych
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,16): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,16): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,16): warning C4244:             _Ty=unsigned __int64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,16): warning C4244:         ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,16): warning C4244:         and
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,16): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,16): warning C4244:             _Ty1=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,16): warning C4244:         ]
+  (kompilowanie pliku źródłowego „src/map.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,16):
+      kontekst tworzenia wystąpienia szablonu (najpierw najstarszy) to
+          C:\Users\filip\source\repos\gunmen\src\map.cpp(66,70):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „std::pair<int,int>::pair<unsigned __int64,unsigned __int64,0>(std::pair<unsigned __int64,unsigned __int64> &&) noexcept” funkcji szablon
+              C:\Users\filip\source\repos\gunmen\src\map.cpp(66,55):
+              zobacz pierwsze odwołanie do elementu „std::pair<int,int>::pair” w „Map::processTileLayers”
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,61): warning C4244: "inicjowanie": konwersja z "_Ty" do "_Ty2", możliwa utrata danych
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,61): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,61): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,61): warning C4244:             _Ty=unsigned __int64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,61): warning C4244:         ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,61): warning C4244:         and
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,61): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,61): warning C4244:             _Ty2=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(292,61): warning C4244:         ]
+  (kompilowanie pliku źródłowego „src/map.cpp”)
+  
   gunmen.vcxproj -> C:\Users\filip\source\repos\gunmen\out\x64\Debug\gunmen.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

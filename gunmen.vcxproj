@@ -149,10 +149,12 @@
   <ItemGroup>
     <ClCompile Include="gunmen.cpp" />
     <ClCompile Include="src\Animation.cpp" />
+    <ClCompile Include="src\map.cpp" />
     <ClCompile Include="src\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hdr\Animation.h" />
+    <ClInclude Include="hdr\map.h" />
     <ClInclude Include="hdr\Player.h" />
     <ClInclude Include="hdr\SFMLOrthogonalLayer.hpp" />
   </ItemGroup>
