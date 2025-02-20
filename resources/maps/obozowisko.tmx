@@ -712,21 +712,19 @@
    <image source="../graphics/mapResources/Animations/flag/5_slice_6.png" width="32" height="64"/>
   </tile>
  </tileset>
- <group id="5" name="underground">
-  <layer id="1" name="podłoże" width="30" height="30">
-   <data encoding="base64" compression="zlib">
+ <layer id="1" name="podłoże" width="30" height="30">
+  <data encoding="base64" compression="zlib">
    eJztlE0OgjAQRntUDuaCqAkajSb+IAtJSGQhxoWyMp7GGRhwQkuVtCXRsHihlimvXwdJhBDJ93gEH/M5V/Tp0vlcupvOPvLq+snnXXhVufvoqyr7v3qV5+sDMcH3d3GcfQosgAPzIzlwatTa9KJzDizJPQPOQASkb7dVL8+6YtyAtSjP+iivM3k3ai96Arri7x2wBa5Ui+ftO8gbMj/fSwaMgAldNc/pkr2oxZ7G9NwdjRe0l6r2DozpfkdH6z4D5tuLss85earaE90fW/TiOCDfhnJjVnyXM6p9AE95nYm/WFv1scoUKWpDIf2XTd/pej2ed6qp190z8HqPL+oU304bmVW9k+Ytfb9U/WqObZ3vp7wuPG3ePlwDAz/BC7nZxgU=
   </data>
-  </layer>
-  <layer id="2" name="warstwa1" width="30" height="30">
-   <data encoding="base64" compression="zlib">
+ </layer>
+ <layer id="2" name="warstwa1" width="30" height="30">
+  <data encoding="base64" compression="zlib">
    eJxjYBgF5IJACvT6E6HGkwLz6QmCBsBOFxLU2qHxw6jpkEEE/AbaAVQECowD7QLigPtAO2AUjIJRgAHCB9oBQxQMl/IMW9sshAxzQil1yCgYEOBBof7hkg9IBQAZyQTx
   </data>
-  </layer>
- </group>
+ </layer>
  <layer id="6" name="upground" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjILhBXQYqaNmFAwN0DDQDhgFAw4yqWCGBRFlAjFqRsEoGAWjYKgBAETtAbY=
+   eJxjYBgFgwkwDrQDRsEoGAZAh4iMRIyaUTA0QMNAO2AUDDjIpIIZFkSUCcSoGQWjYBSMgqEGAFFtAbc=
   </data>
  </layer>
 </map>
