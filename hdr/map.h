@@ -1,17 +1,14 @@
 ﻿#pragma once
 #include <tmxlite/Map.hpp>
+#include <pugixml.hpp>
 
 class Map
 {
-public:
-	Map(std::string mapPath);
-	void printInfo();
-
 private:
-	tmx::Map map;
 	int mapWidth;
 	int mapHeight;
 	int tileSize;
+	pugi::xml_document doc;
 
 	struct Tile {
 		int GID;
@@ -22,7 +19,6 @@ private:
 		bool hasHitbox;
 		bool isFromTileSet;
 	};
-	static std::map<uint32_t, Tile> tilesInfo;
 
 	struct Layer {
 		short int id;
@@ -32,8 +28,16 @@ private:
 	};
 	std::vector<Layer> layers; // Pierwsze wchodzą najgłębsze
 
-	void processTileLayers();
-	std::string getTexturePathForTile(uint32_t tileID);
+	//void processTileLayers();
+	//std::string getTexturePathForTile(uint32_t tileID);
 	void setTilesInfo();
+
+public:
+	Map(std::string mapPath);
+	~Map();
+	void printInfo();
+	static std::map<uint32_t, Tile> tilesInfo;
+
+
 };
 
