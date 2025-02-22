@@ -5,9 +5,11 @@
 #include <iostream>
 #include <sstream> 
 #include <string>  
-
-#include "../hdr/map.h"
+#include <vector>
 #include <iomanip>
+
+#include "../hdr/Decoder.h"
+#include "../hdr/Map.h"
 
 std::map<uint32_t, Map::Tile> Map::tilesInfo;
 
@@ -24,7 +26,8 @@ Map::Map(std::string mapPath)
     if (tilesInfo.empty()) {
         setTilesInfo();
     }
-    // processTileLayers();
+
+    processTileLayers();
 }
 
 void Map::setTilesInfo() {
@@ -185,9 +188,9 @@ void Map::printInfo() {
         std::cout << "Path: " << entry.second.path << "\n";
         std::cout << "Is From TileSet: " << (entry.second.isFromTileSet ? "Yes" : "No") << "\n";
 
-        // Sprawdzenie, czy tile ma hitboxy
-        const auto* hitboxes = std::get_if<std::vector<Hitbox>>(&entry.second.properties);
-        if (hitboxes && !hitboxes->empty()) {
+            // Sprawdzenie, czy tile ma hitboxy
+            const auto* hitboxes = std::get_if<std::vector<Hitbox>>(&entry.second.properties);
+            if (hitboxes && !hitboxes->empty()) {
             std::cout << "Hitboxes: \n";
             for (const auto& hitbox : *hitboxes) {
                 std::cout << "  Hitbox Type: ";
@@ -238,6 +241,73 @@ void Map::printInfo() {
     }
 }
 
+void Map::processTileLayers() {
+    // Iteracja po wszystkich warstwach w dokumencie XML
+    for (pugi::xml_node layerNode : doc.child("map").children("layer")) {
+        Layer layer;
+        layer.id = layerNode.attribute("id").as_int();
+        layer.name = layerNode.attribute("name").as_string();
+        layer.width = layerNode.attribute("width").as_int();
+        layer.height = layerNode.attribute("height").as_int();
+
+        // Przejście przez dane warstwy
+        pugi::xml_node dataNode = layerNode.child("data");
+        if (dataNode) {
+            std::string encoding = dataNode.attribute("encoding").as_string();
+            std::string compression = dataNode.attribute("compression").as_string();
+
+            if (encoding == "base64" && compression == "zlib") {
+                // Dekodowanie base64
+                std::string base64Data = dataNode.text().as_string();
+                std::string compressedData = Decoder::base64_decode(base64Data);
+
+                // Dekompresja zlib
+                std::vector<uint8_t> decompressedData;
+                Decoder::decompressZlib(compressedData, decompressedData);
+
+                // Przetwarzanie zdekompresowanych danych
+                size_t tileCount = layer.width * layer.height;
+                for (size_t i = 0; i < tileCount; ++i) {
+                    // Każdy kafelek jest reprezentowany przez 4 bajty (uint32_t)
+                    uint32_t gid = *reinterpret_cast<uint32_t*>(&decompressedData[i * 4]);
+
+                    // Odkodowanie gid
+                    uint32_t tileID;
+                    bool flipHorizontal, flipVertical, flipDiagonal;
+                    Decoder::decodeGID(gid, tileID, flipHorizontal, flipVertical, flipDiagonal);
+
+                    if (tileID != 0) { // Pomijamy puste kafelki
+                        // Znajdź kafelek w tilesInfo
+                        auto it = tilesInfo.find(tileID);
+                        if (it != tilesInfo.end()) {
+                            // Utwórz TileInfo
+                            TileInfo tileInfo;
+                            tileInfo.tile = it->second;
+                            tileInfo.x = i % layer.width;
+                            tileInfo.y = i / layer.width;
+                            tileInfo.flipHorizontal = flipHorizontal;
+                            tileInfo.flipVertical = flipVertical;
+                            tileInfo.flipDiagonal = flipDiagonal;
+
+                            // Dodaj TileInfo do warstwy
+                            layer.tiles.push_back(tileInfo);
+                        }
+                    }
+                }
+            }
+            else {
+                std::cerr << "Nieobsługiwany format danych warstwy: encoding=" << encoding
+                    << ", compression=" << compression << "\n";
+            }
+        }
+        else {
+            std::cerr << "Błąd: Brak węzła <data> dla warstwy: " << layer.name << "\n";
+        }
+
+        // Dodaj warstwę do listy warstw
+        layers.push_back(layer);
+    }
+}
 
 Map::~Map() {
 }

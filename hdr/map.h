@@ -6,6 +6,9 @@
 #include <utility> 
 #include <sstream> 
 
+struct Layer;
+struct Tile;
+
 class Map
 {
 private:
@@ -64,27 +67,34 @@ private:
 		TileProperty properties;
 	};
 
+	// Struktura dla kawalków w warstwie
+	struct TileInfo {
+		Tile tile; 
+		int x, y;
+		bool flipHorizontal;
+		bool flipVertical;
+		bool flipDiagonal;
+	};
+
 	struct Layer {
 		short int id;
 		int width;
 		int height;
 		std::string name;
-		std::vector<Tile> tiles;
-		std::vector<std::pair<int, int>> coordinates;
+		std::vector<TileInfo> tiles; // Kafelki na warstwie z informacjami o flipach
 	};
 	std::vector<Layer> layers; // Pierwsze wchodzą najgłębsze warstwy
+	static std::map<uint32_t, Tile> tilesInfo;
 
 	void setTilesInfo();
 	void setTilesPath();
 	void setTilesAnimation();
 	void setTilesHitboxes();
+	void processTileLayers();
 
 public:
 	Map(std::string mapPath);
 	~Map();
 	void printInfo();
-	static std::map<uint32_t, Tile> tilesInfo;
-
-
 };
 

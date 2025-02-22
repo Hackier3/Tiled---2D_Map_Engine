@@ -34,7 +34,7 @@ int main()
     //    window.display();
     //}
 
-    Map map("resources/maps/test.tmx");
+    Map map("resources/maps/obozowisko.tmx");
     map.printInfo();
 
     return 0;

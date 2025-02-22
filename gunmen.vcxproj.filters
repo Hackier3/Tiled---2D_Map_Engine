@@ -24,7 +24,10 @@
     <ClCompile Include="src\Player.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="src\map.cpp">
+    <ClCompile Include="src\Map.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Decoder.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,10 +38,10 @@
     <ClInclude Include="hdr\Player.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="hdr\SFMLOrthogonalLayer.hpp">
+    <ClInclude Include="hdr\Map.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="hdr\map.h">
+    <ClInclude Include="hdr\Decoder.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
