@@ -7,6 +7,7 @@
 #include <string>  
 #include <vector>
 #include <iomanip>
+#include <filesystem>
 
 #include "../hdr/Decoder.h"
 #include "../hdr/Map.h"
@@ -28,6 +29,7 @@ Map::Map(std::string mapPath)
     }
 
     processTileLayers();
+    createLayersSprite();
 }
 
 void Map::setTilesInfo() {
@@ -48,6 +50,8 @@ void Map::setTilesPath() {
         pugi::xml_node image = tileset.child("image");
         if (image) { 
             std::string imagePath = image.attribute("source").as_string();
+			imagePath.replace(0, 2, "resources");
+
             int width = image.attribute("width").as_int();
             int height = image.attribute("height").as_int();
 
@@ -74,6 +78,8 @@ void Map::setTilesPath() {
 
                 if (tileImage) {
                     std::string imagePath = tileImage.attribute("source").as_string();
+                    imagePath.replace(0, 2, "resources");
+
                     int width = tileImage.attribute("width").as_int();
                     int height = tileImage.attribute("height").as_int();
 
@@ -244,11 +250,11 @@ void Map::printInfo() {
 void Map::processTileLayers() {
     // Iteracja po wszystkich warstwach w dokumencie XML
     for (pugi::xml_node layerNode : doc.child("map").children("layer")) {
-        Layer layer;
-        layer.id = layerNode.attribute("id").as_int();
-        layer.name = layerNode.attribute("name").as_string();
-        layer.width = layerNode.attribute("width").as_int();
-        layer.height = layerNode.attribute("height").as_int();
+        auto layer = std::make_unique<Layer>();
+        layer->id = layerNode.attribute("id").as_int();
+        layer->name = layerNode.attribute("name").as_string();
+        layer->width = layerNode.attribute("width").as_int();
+        layer->height = layerNode.attribute("height").as_int();
 
         // Przejście przez dane warstwy
         pugi::xml_node dataNode = layerNode.child("data");
@@ -266,7 +272,7 @@ void Map::processTileLayers() {
                 Decoder::decompressZlib(compressedData, decompressedData);
 
                 // Przetwarzanie zdekompresowanych danych
-                size_t tileCount = layer.width * layer.height;
+                size_t tileCount = layer->width * layer->height;
                 for (size_t i = 0; i < tileCount; ++i) {
                     // Każdy kafelek jest reprezentowany przez 4 bajty (uint32_t)
                     uint32_t gid = *reinterpret_cast<uint32_t*>(&decompressedData[i * 4]);
@@ -283,14 +289,14 @@ void Map::processTileLayers() {
                             // Utwórz TileInfo
                             TileInfo tileInfo;
                             tileInfo.tile = it->second;
-                            tileInfo.x = i % layer.width;
-                            tileInfo.y = i / layer.width;
+                            tileInfo.x = i % layer->width;
+                            tileInfo.y = i / layer->width;
                             tileInfo.flipHorizontal = flipHorizontal;
                             tileInfo.flipVertical = flipVertical;
                             tileInfo.flipDiagonal = flipDiagonal;
 
                             // Dodaj TileInfo do warstwy
-                            layer.tiles.push_back(tileInfo);
+                            layer->tiles.push_back(tileInfo);
                         }
                     }
                 }
@@ -301,11 +307,34 @@ void Map::processTileLayers() {
             }
         }
         else {
-            std::cerr << "Błąd: Brak węzła <data> dla warstwy: " << layer.name << "\n";
+            std::cerr << "Błąd: Brak węzła <data> dla warstwy: " << layer->name << "\n";
         }
 
-        // Dodaj warstwę do listy warstw
-        layers.push_back(layer);
+        layers.push_back(std::move(layer)); // Przenieś warstwę do wektora
+    }
+}
+
+void Map::createLayersSprite() {
+    for (auto& layer : this->layers) {
+        if (!layer->canvasTexture.create(mapWidth * tileSize, mapHeight * tileSize)) {
+            throw std::runtime_error("Failed to create canvas texture");
+        }
+
+        layer->canvasTexture.clear(sf::Color::Transparent);
+        sf::Texture texture;
+        if (!texture.loadFromFile(tilesInfo[1].path)) {
+            throw std::runtime_error("Cannot load file");
+        };
+        sf::Sprite sprite(texture);
+        layer->canvasTexture.draw(sprite);
+        layer->canvasTexture.display();
+        layer->sprite.setTexture(layer->canvasTexture.getTexture());
+    }
+}
+
+void Map::drawMap(sf::RenderWindow& window) {
+    for (auto& layer : this->layers) {
+        window.draw(layer->sprite);
     }
 }
 

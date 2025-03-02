@@ -62,7 +62,7 @@ private:
 		int GID;
 		int firstGID;
 		int ID;
-		std::string path;
+		std::string path = "";
 		bool isFromTileSet;
 		TileProperty properties;
 	};
@@ -82,8 +82,11 @@ private:
 		int height;
 		std::string name;
 		std::vector<TileInfo> tiles; // Kafelki na warstwie z informacjami o flipach
+		sf::RenderTexture canvasTexture;
+		sf::Sprite sprite; // Sprite dla warstwy
 	};
-	std::vector<Layer> layers; // Pierwsze wchodzą najgłębsze warstwy
+
+	std::vector<std::unique_ptr<Layer>> layers;
 	static std::map<uint32_t, Tile> tilesInfo;
 
 	void setTilesInfo();
@@ -91,10 +94,12 @@ private:
 	void setTilesAnimation();
 	void setTilesHitboxes();
 	void processTileLayers();
+	void createLayersSprite();
 
 public:
 	Map(std::string mapPath);
 	~Map();
 	void printInfo();
+	void drawMap(sf::RenderWindow& window);
 };
 
