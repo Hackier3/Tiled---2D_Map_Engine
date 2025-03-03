@@ -29,8 +29,6 @@ int main()
         }
 
         player.Update(deltaTime);
-
-        map.drawMap(window);
         player.Draw(window);
         window.display();
         window.clear();

@@ -29,7 +29,10 @@ Map::Map(std::string mapPath)
     }
 
     processTileLayers();
-    createLayersSprite();
+
+    for (auto& layer : layers) {
+        layer->createLayerSprite();
+    }
 }
 
 void Map::setTilesInfo() {
@@ -250,7 +253,7 @@ void Map::printInfo() {
 void Map::processTileLayers() {
     // Iteracja po wszystkich warstwach w dokumencie XML
     for (pugi::xml_node layerNode : doc.child("map").children("layer")) {
-        auto layer = std::make_unique<Layer>();
+        auto layer = std::make_unique<Layer>(this);
         layer->id = layerNode.attribute("id").as_int();
         layer->name = layerNode.attribute("name").as_string();
         layer->width = layerNode.attribute("width").as_int();
@@ -314,27 +317,48 @@ void Map::processTileLayers() {
     }
 }
 
-void Map::createLayersSprite() {
-    for (auto& layer : this->layers) {
-        if (!layer->canvasTexture.create(mapWidth * tileSize, mapHeight * tileSize)) {
-            throw std::runtime_error("Failed to create canvas texture");
-        }
+void Map::Layer::createLayerSprite() {
+    if (!canvasTexture.create(parent->mapWidth * parent->tileSize, parent->mapHeight * parent->tileSize)) {
+        throw std::runtime_error("Failed to create canvas texture");
+    }
+    canvasTexture.clear(sf::Color::Transparent);
 
-        layer->canvasTexture.clear(sf::Color::Transparent);
+    for (auto& tile : tiles) {
         sf::Texture texture;
-        if (!texture.loadFromFile(tilesInfo[1].path)) {
+        if (!texture.loadFromFile(tile.tile.path)) {
             throw std::runtime_error("Cannot load file");
         };
+
         sf::Sprite sprite(texture);
-        layer->canvasTexture.draw(sprite);
-        layer->canvasTexture.display();
-        layer->sprite.setTexture(layer->canvasTexture.getTexture());
+		if (tile.tile.isFromTileSet) {
+			int tilesetWidth = texture.getSize().x;
+			int tilesetHeight = texture.getSize().y;
+			int tilesPerRow = std::ceil(static_cast<double>(tilesetWidth) / parent->tileSize);
+			int tilesPerColumn = std::ceil(static_cast<double>(tilesetHeight) / parent->tileSize);
+
+			sprite.setTextureRect(sf::IntRect(tile.tile.ID % tilesPerRow * parent->tileSize,
+                                              tile.tile.ID / tilesPerColumn * parent->tileSize,
+                                              tile.tile.ID % tilesPerRow * parent->tileSize + parent->tileSize,
+                                              tile.tile.ID / tilesPerColumn * parent->tileSize + parent->tileSize));
+		}
+
+        sprite.setPosition(tile.x * parent->tileSize, tile.y * parent->tileSize);
+        canvasTexture.draw(sprite);
+    }
+
+    canvasTexture.display();
+    sprite.setTexture(canvasTexture.getTexture());
+}
+
+void Map::drawUnderground(sf::RenderWindow& window) {
+    for (size_t i = 0; i < layers.size() - 2; i++) {
+        window.draw(layers[i]->sprite);
     }
 }
 
-void Map::drawMap(sf::RenderWindow& window) {
-    for (auto& layer : this->layers) {
-        window.draw(layer->sprite);
+void Map::drawUpground(sf::RenderWindow& window) {
+    if (!layers.empty()) {
+        window.draw(layers.back()->sprite);
     }
 }
 

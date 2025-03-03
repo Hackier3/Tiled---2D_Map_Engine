@@ -58,6 +58,7 @@ private:
 	using AnimatedData = std::vector<std::pair<int, int>>; // <frameID, duration>
 	using TileProperty = std::variant<std::vector<Hitbox>, AnimatedData>;
 
+	// Informacja o każdym kafelku
 	struct Tile {
 		int GID;
 		int firstGID;
@@ -67,7 +68,7 @@ private:
 		TileProperty properties;
 	};
 
-	// Struktura dla kawalków w warstwie
+	// Struktura dla konkretnych kafelkow w warstwie
 	struct TileInfo {
 		Tile tile; 
 		int x, y;
@@ -77,6 +78,9 @@ private:
 	};
 
 	struct Layer {
+		Map* parent;
+		Layer(Map* parent) : parent(parent) {}
+
 		short int id;
 		int width;
 		int height;
@@ -84,6 +88,8 @@ private:
 		std::vector<TileInfo> tiles; // Kafelki na warstwie z informacjami o flipach
 		sf::RenderTexture canvasTexture;
 		sf::Sprite sprite; // Sprite dla warstwy
+
+		void createLayerSprite();
 	};
 
 	std::vector<std::unique_ptr<Layer>> layers;
@@ -94,12 +100,12 @@ private:
 	void setTilesAnimation();
 	void setTilesHitboxes();
 	void processTileLayers();
-	void createLayersSprite();
+	void drawUnderground(sf::RenderWindow& window);
+	void drawUpground(sf::RenderWindow& window);
 
 public:
 	Map(std::string mapPath);
 	~Map();
 	void printInfo();
-	void drawMap(sf::RenderWindow& window);
 };
 
