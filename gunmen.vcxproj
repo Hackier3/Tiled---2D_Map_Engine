@@ -152,12 +152,14 @@
     <ClCompile Include="src\Decoder.cpp" />
     <ClCompile Include="src\Map.cpp" />
     <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hdr\Animation.h" />
     <ClInclude Include="hdr\Decoder.h" />
     <ClInclude Include="hdr\Map.h" />
     <ClInclude Include="hdr\Player.h" />
+    <ClInclude Include="hdr\World.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\maps\obozowisko.tmx" />

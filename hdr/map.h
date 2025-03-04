@@ -104,7 +104,10 @@ private:
 	void drawUpground(sf::RenderWindow& window);
 
 public:
+	friend class World;
 	Map(std::string mapPath);
+	Map(Map&&) = default;
+	Map& operator=(Map&&) = default;
 	~Map();
 	void printInfo();
 };
