@@ -5,7 +5,7 @@
 #include <openssl/buffer.h>
 #include <stdexcept>
 
-void Decoder::decodeGID(uint32_t gid, uint32_t& tileID, bool& flipHorizontal, bool& flipVertical, bool& flipDiagonal) {
+void Decoder::DecodeGID(uint32_t gid, uint32_t& tileID, bool& flipHorizontal, bool& flipVertical, bool& flipDiagonal) {
     // Maska do wyodrębnienia 3 najważniejszych bitów
     const uint32_t FLIPPED_HORIZONTALLY_FLAG = 0x80000000;
     const uint32_t FLIPPED_VERTICALLY_FLAG = 0x40000000;
@@ -20,7 +20,7 @@ void Decoder::decodeGID(uint32_t gid, uint32_t& tileID, bool& flipHorizontal, bo
     tileID = gid & ~(FLIPPED_HORIZONTALLY_FLAG | FLIPPED_VERTICALLY_FLAG | FLIPPED_DIAGONALLY_FLAG);
 }
 
-void Decoder::decompressZlib(const std::string& compressedData, std::vector<uint8_t>& decompressedData) {
+void Decoder::DecompressZlib(const std::string& compressedData, std::vector<uint8_t>& decompressedData) {
     const size_t BUFFER_SIZE = 1024 * 1024;
     decompressedData.resize(BUFFER_SIZE);
 
@@ -55,7 +55,7 @@ void Decoder::decompressZlib(const std::string& compressedData, std::vector<uint
     decompressedData.resize(totalOut);
 }
 
-std::string Decoder::base64_decode(const std::string& encoded_string) {
+std::string Decoder::Base64_decode(const std::string& encoded_string) {
     BIO* bio = BIO_new_mem_buf(encoded_string.data(), encoded_string.size());
     BIO* b64 = BIO_new(BIO_f_base64());
     bio = BIO_push(b64, bio);

@@ -18,6 +18,10 @@ private:
     std::vector<Map> maps;
     Player player;
     sf::RenderWindow& window;
+    sf::View view;
+    float viewWidth;
+    float viewHeight;
 
     void Draw();
+    void CenterView();
 };

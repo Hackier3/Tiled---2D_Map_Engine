@@ -8,9 +8,9 @@ public:
     ~Animation();
 
     void Update(int row, float deltaTime, bool faceRight);
-    void setCurrentImageColumn(unsigned int xSetter);
-    unsigned int getCurrentImageColumn();
-    unsigned int getImageCountColumn();
+    void SetCurrentImageColumn(unsigned int xSetter);
+    unsigned int GetCurrentImageColumn();
+    unsigned int GetImageCountColumn();
     sf::IntRect uvRect;
 
 

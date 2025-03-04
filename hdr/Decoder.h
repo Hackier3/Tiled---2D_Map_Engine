@@ -6,9 +6,9 @@
 class Decoder
 {
 public:
-	static void decodeGID(uint32_t gid, uint32_t& tileID, bool& flipHorizontal, bool& flipVertical, bool& flipDiagonal);
-	static void decompressZlib(const std::string& compressedData, std::vector<uint8_t>& decompressedData);
-	static std::string base64_decode(const std::string& encoded_string);
+	static void DecodeGID(uint32_t gid, uint32_t& tileID, bool& flipHorizontal, bool& flipVertical, bool& flipDiagonal);
+	static void DecompressZlib(const std::string& compressedData, std::vector<uint8_t>& decompressedData);
+	static std::string Base64_decode(const std::string& encoded_string);
 
 private:
 	Decoder();

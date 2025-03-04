@@ -10,19 +10,19 @@ Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, 
 	this->speed = speed;
 	row = 0;
 	faceRight = true;
-
+	this->bodyWidth = 30.0f;
+	this->spawnXCord = 200;
+	this->spawnYCord = 200;
+	
 	// obliczamy wysokość proporcjonalnie do tekstury
-	float bodyWidth = 30.0f;
 	float scaleFactor = bodyWidth / animation.uvRect.width;  // Proporcja szerokości
 	float bodyHeight = animation.uvRect.height * scaleFactor;  // Skalowanie wysokości według tej samej proporcji
 
 	body.setSize(sf::Vector2f(bodyWidth, bodyHeight));  // Ustawienie nowych wymiarów
-	body.setPosition({ 206.0f, 206.0f });
+	body.setPosition({ spawnXCord, spawnYCord });
+	body.setOrigin(body.getSize().x / 2, body.getSize().y / 2);
 	body.setTexture(texture);
 }
-
-Player::~Player() {
-};
 
 void Player::Update(float deltaTime) {
 	sf::Vector2f movement(0.0f, 0.0f);
@@ -60,11 +60,11 @@ void Player::Update(float deltaTime) {
 		timeSinceLastChange += deltaTime;
 			
 		if (timeSinceLastChange >= changeInterval) {
-			if (animation.getCurrentImageColumn() != animation.getImageCountColumn() - 1) {
-				animation.setCurrentImageColumn(animation.getImageCountColumn() - 1);
+			if (animation.GetCurrentImageColumn() != animation.GetImageCountColumn() - 1) {
+				animation.SetCurrentImageColumn(animation.GetImageCountColumn() - 1);
 			}
 			else {
-				animation.setCurrentImageColumn(0);
+				animation.SetCurrentImageColumn(0);
 			}
 
 			timeSinceLastChange = 0.0f; // Resetowanie czasu po zmianie klatki
@@ -80,3 +80,10 @@ void Player::Update(float deltaTime) {
 void Player::Draw(sf::RenderWindow& window) {
 	window.draw(body);
 }
+
+sf::Vector2f Player::GetPosition() {
+	return body.getPosition();
+}
+
+Player::~Player() {
+};

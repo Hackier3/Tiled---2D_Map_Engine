@@ -28,6 +28,7 @@ Map::Map(std::string mapPath)
         setTilesInfo();
     }
 
+    printInfo();
     processTileLayers();
 
     for (auto& layer : layers) {
@@ -268,11 +269,11 @@ void Map::processTileLayers() {
             if (encoding == "base64" && compression == "zlib") {
                 // Dekodowanie base64
                 std::string base64Data = dataNode.text().as_string();
-                std::string compressedData = Decoder::base64_decode(base64Data);
+                std::string compressedData = Decoder::Base64_decode(base64Data);
 
                 // Dekompresja zlib
                 std::vector<uint8_t> decompressedData;
-                Decoder::decompressZlib(compressedData, decompressedData);
+                Decoder::DecompressZlib(compressedData, decompressedData);
 
                 // Przetwarzanie zdekompresowanych danych
                 size_t tileCount = layer->width * layer->height;
@@ -283,7 +284,7 @@ void Map::processTileLayers() {
                     // Odkodowanie gid
                     uint32_t tileID;
                     bool flipHorizontal, flipVertical, flipDiagonal;
-                    Decoder::decodeGID(gid, tileID, flipHorizontal, flipVertical, flipDiagonal);
+                    Decoder::DecodeGID(gid, tileID, flipHorizontal, flipVertical, flipDiagonal);
 
                     if (tileID != 0) { // Pomijamy puste kafelki
                         // Znajdź kafelek w tilesInfo

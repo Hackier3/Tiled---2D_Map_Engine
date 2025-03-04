@@ -4,6 +4,7 @@
 
 class Player {
 public :
+	friend class World;
 	Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed);
 	~Player();
 
@@ -17,4 +18,9 @@ private:
 	float speed;
 	bool faceRight;
 	bool moving;
+	float bodyWidth;
+	float spawnXCord;
+	float spawnYCord;
+
+	sf::Vector2f GetPosition();
 };

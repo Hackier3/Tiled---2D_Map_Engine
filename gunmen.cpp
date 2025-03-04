@@ -8,7 +8,7 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "My window", sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode({ 1200, 1000 }), "My window", sf::Style::Close);
     sf::Texture playerTexture;
 	playerTexture.loadFromFile("resources/graphics/BODY_skeleton.png");
     World world(&playerTexture, window);
@@ -27,8 +27,6 @@ int main()
         }
 
         world.Update(deltaTime);
-        window.display();
-        window.clear();
     }
 
     return 0;
