@@ -1,8 +1,17 @@
 ﻿#include "../hdr/World.h"
 
+World* World::instance = nullptr;
+
+World& World::getInstance(sf::Texture* playerTexture, sf::RenderWindow& window) {
+    if (!instance) {
+        instance = new World(playerTexture, window);
+    }
+    return *instance;
+}
+
 World::World(sf::Texture* playerTexture, sf::RenderWindow& window)
     : window(window),
-    player(playerTexture, sf::Vector2u(9, 3), 0.1f, 150.0f)  // Tymczasowa inicjalizacja player
+    player(playerTexture, sf::Vector2u(9, 3), 0.1f, 150.0f)
 {
     float windowRatio = float(window.getSize().x) / float(window.getSize().y);
     this->viewHeight = 700;
@@ -33,5 +42,4 @@ void World::CenterView() {
     window.setView(view);
 }
 
-World::~World() {
-}
+World::~World() {}

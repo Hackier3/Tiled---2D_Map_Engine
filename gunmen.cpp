@@ -11,7 +11,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode({ 1200, 1000 }), "My window", sf::Style::Close);
     sf::Texture playerTexture;
 	playerTexture.loadFromFile("resources/graphics/BODY_skeleton.png");
-    World world(&playerTexture, window);
+    World& world = World::getInstance(&playerTexture, window);
 
     sf::Clock clock;
     window.setFramerateLimit(150);

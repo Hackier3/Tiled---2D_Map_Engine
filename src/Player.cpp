@@ -52,7 +52,7 @@ void Player::Update(float deltaTime) {
 	}
 
 	if (moving) {
-		animation.Update(row, deltaTime, faceRight);
+		animation.UpdateCharacter(row, deltaTime, faceRight);
 	}
 	else {
 		static float timeSinceLastChange = 0.0f;
@@ -68,7 +68,7 @@ void Player::Update(float deltaTime) {
 			}
 
 			timeSinceLastChange = 0.0f; // Resetowanie czasu po zmianie klatki
-			animation.Update(row, 0, faceRight);
+			animation.UpdateCharacter(row, 0, faceRight);
 		}
 	}
 

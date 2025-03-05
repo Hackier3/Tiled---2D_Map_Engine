@@ -33,6 +33,7 @@ Map::Map(std::string mapPath)
 
     for (auto& layer : layers) {
         layer->createLayerSprite();
+        layer->setAnimatedTiles();
     }
 }
 
@@ -323,6 +324,22 @@ void Map::Layer::createLayerSprite() {
 
     canvasTexture.display();
     sprite.setTexture(canvasTexture.getTexture());
+}
+
+void Map::Layer::setAnimatedTiles() {
+    for (auto& tile : tiles) {
+        if (tile.tile.animation.size() != 0) {
+            AnimatedTile animatedTile;
+            animatedTile.x = tile.x;
+            animatedTile.y = tile.y;
+            animatedTile.ID = tile.tile.ID;
+
+            for (const auto& frame : tile.tile.animation) {
+                animatedTile.allFramesInfo.push_back(std::make_tuple(frame.first, frame.second, frame.second));
+            }
+            this->animatedTiles.push_back(animatedTile);
+        }
+    }
 }
 
 void Map::drawUnderground(sf::RenderWindow& window) {

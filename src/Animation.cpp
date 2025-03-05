@@ -11,15 +11,12 @@ Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switch
 	uvRect.height = textureSize.y / float(imageCount.y);
 }
 
-Animation::~Animation() {
-}
-
-void Animation::Update(int row, float deltaTime, bool faceRight){
+void Animation::UpdateCharacter(int row, float deltaTime, bool faceRight){
 	currentImage.y = row;
 	totalTime += deltaTime;
 
 	if (totalTime >= switchTime){
-		totalTime -= switchTime;
+		totalTime = 0;
 		currentImage.x++;
 
 		if (currentImage.x >= imageCount.x){
@@ -39,6 +36,16 @@ void Animation::Update(int row, float deltaTime, bool faceRight){
 	}
 }
 
+void Animation::UpdateTileInLayer(World& world, float deltaTime) {
+	for (auto& map : world.maps) {
+		for (auto& layer : map.layers) {
+			for (auto& tile : layer->animatedTiles) {
+				
+			}
+		}
+	}
+}
+
 void Animation::SetCurrentImageColumn(unsigned int xSetter) {
 	currentImage.x = xSetter;
 }
@@ -49,4 +56,7 @@ unsigned int Animation::GetCurrentImageColumn() {
 
 unsigned int Animation::GetImageCountColumn() {
 	return imageCount.x;
+}
+
+Animation::~Animation() {
 }

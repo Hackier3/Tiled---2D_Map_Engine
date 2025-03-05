@@ -81,6 +81,14 @@ private:
 		Map* parent;
 		Layer(Map* parent) : parent(parent) {}
 
+		struct AnimatedTile {
+			int ID;
+			int x;
+			int y;
+			int recentTile = 0;
+			std::vector<std::tuple<int, int, int>> allFramesInfo; // { ID klatki, czas trwania klatki, pozostaly czas do zmiany klatki }
+		};
+
 		short int id;
 		int width;
 		int height;
@@ -88,8 +96,10 @@ private:
 		std::vector<TileInfo> tiles; // Kafelki na warstwie z informacjami o flipach
 		sf::RenderTexture canvasTexture;
 		sf::Sprite sprite; // Sprite dla warstwy
+		std::vector<AnimatedTile> animatedTiles;
 
 		void createLayerSprite();
+		void setAnimatedTiles();
 	};
 
 	std::vector<std::unique_ptr<Layer>> layers;
@@ -105,6 +115,7 @@ private:
 
 public:
 	friend class World;
+	friend class Animation;
 	Map(std::string mapPath);
 	Map(Map&&) = default;
 	Map& operator=(Map&&) = default;
