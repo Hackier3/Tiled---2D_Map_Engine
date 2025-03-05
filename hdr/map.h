@@ -56,7 +56,6 @@ private:
 	};
 
 	using AnimatedData = std::vector<std::pair<int, int>>; // <frameID, duration>
-	using TileProperty = std::variant<std::vector<Hitbox>, AnimatedData>;
 
 	// Informacja o każdym kafelku
 	struct Tile {
@@ -65,7 +64,8 @@ private:
 		int ID;
 		std::string path = "";
 		bool isFromTileSet;
-		TileProperty properties;
+		AnimatedData animation;
+		std::vector<Hitbox> hitboxes;
 	};
 
 	// Struktura dla konkretnych kafelkow w warstwie

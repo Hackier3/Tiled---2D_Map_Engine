@@ -102,31 +102,25 @@ void Map::setTilesPath() {
 }
 
 void Map::setTilesAnimation() {
-    // Iteracja po wszystkich tilesetach w dokumencie XML
     for (pugi::xml_node tileset : doc.child("map").children("tileset")) {
         int firstGID = tileset.attribute("firstgid").as_int();
 
-        // Iteracja po wszystkich tile w danym tilesecie
         for (pugi::xml_node tile : tileset.children("tile")) {
             int tileID = tile.attribute("id").as_int() + firstGID;
             pugi::xml_node animationNode = tile.child("animation");
 
-            // Sprawdzenie, czy tile ma animację
             if (animationNode) {
                 AnimatedData animationFrames;
 
-                // Iteracja po wszystkich klatkach animacji
                 for (pugi::xml_node frame : animationNode.children("frame")) {
                     int frameID = frame.attribute("tileid").as_int() + firstGID;
                     int duration = frame.attribute("duration").as_int();
-                    animationFrames.push_back({ frameID, duration }); // Dodajemy klatkę do wektora
+                    animationFrames.push_back({ frameID, duration });
                 }
 
-                // Szukanie tileID w tilesInfo
                 auto it = tilesInfo.find(tileID);
                 if (it != tilesInfo.end()) {
-                    // Ustawienie właściwości animacji
-                    it->second.properties = TileProperty(animationFrames);
+                    it->second.animation = animationFrames; // Kopiowanie struktury
                 }
             }
         }
@@ -134,35 +128,27 @@ void Map::setTilesAnimation() {
 }
 
 void Map::setTilesHitboxes() {
-    // Iteracja po wszystkich tilesetach w dokumencie XML
     for (pugi::xml_node tileset : doc.child("map").children("tileset")) {
         int firstGID = tileset.attribute("firstgid").as_int();
 
-        // Iteracja po wszystkich tile w danym tilesecie
         for (pugi::xml_node tile : tileset.children("tile")) {
             int tileID = tile.attribute("id").as_int() + firstGID;
             pugi::xml_node objectgroup = tile.child("objectgroup");
 
-            // Sprawdzenie, czy tile ma objectgroup (hitboxy)
             if (objectgroup) {
                 std::vector<Hitbox> hitboxes;
 
-                // Iteracja po wszystkich obiektach (hitboxach) w objectgroup
                 for (pugi::xml_node object : objectgroup.children("object")) {
                     int x = object.attribute("x").as_int();
                     int y = object.attribute("y").as_int();
 
-                    // Sprawdzenie typu hitboxa
                     if (object.child("ellipse")) {
-                        int radius = object.attribute("width").as_int() / 2; // Zakładamy, że szerokość i wysokość są równe
+                        int radius = object.attribute("width").as_int() / 2;
                         hitboxes.emplace_back(x, y, radius);
                     }
                     else if (object.child("polygon")) {
-                        pugi::xml_node polygon = object.child("polygon");
-                        std::string pointsStr = polygon.attribute("points").as_string();
-
                         std::vector<std::pair<int, int>> points;
-                        std::istringstream iss(pointsStr);
+                        std::istringstream iss(object.child("polygon").attribute("points").as_string());
                         std::string point;
                         while (std::getline(iss, point, ' ')) {
                             size_t commaPos = point.find(',');
@@ -176,7 +162,6 @@ void Map::setTilesHitboxes() {
                         hitboxes.emplace_back(x, y);
                     }
                     else {
-                        // Prostokąt (domyślny typ)
                         int width = object.attribute("width").as_int();
                         int height = object.attribute("height").as_int();
                         hitboxes.emplace_back(x, y, width, height);
@@ -185,7 +170,7 @@ void Map::setTilesHitboxes() {
 
                 auto it = tilesInfo.find(tileID);
                 if (it != tilesInfo.end()) {
-                    it->second.properties = TileProperty(hitboxes);
+                    it->second.hitboxes = hitboxes;
                 }
             }
         }
@@ -198,51 +183,40 @@ void Map::printInfo() {
         std::cout << "Path: " << entry.second.path << "\n";
         std::cout << "Is From TileSet: " << (entry.second.isFromTileSet ? "Yes" : "No") << "\n";
 
-            // Sprawdzenie, czy tile ma hitboxy
-            const auto* hitboxes = std::get_if<std::vector<Hitbox>>(&entry.second.properties);
-            if (hitboxes && !hitboxes->empty()) {
+        // Hitboxy
+        if (!entry.second.hitboxes.empty()) {
             std::cout << "Hitboxes: \n";
-            for (const auto& hitbox : *hitboxes) {
+            for (const auto& hitbox : entry.second.hitboxes) {
                 std::cout << "  Hitbox Type: ";
                 switch (hitbox.type) {
                 case Hitbox::Type::Rectangle:
-                    std::cout << "Rectangle, x=" << hitbox.x << ", y=" << hitbox.y << ", ";
-                    if (std::holds_alternative<std::pair<int, int>>(hitbox.data)) {
-                        const auto& rect = std::get<std::pair<int, int>>(hitbox.data);
-                        std::cout << "width=" << rect.first << ", height=" << rect.second;
-                    }
-                    std::cout << "\n";
+                    std::cout << "Rectangle, x=" << hitbox.x << ", y=" << hitbox.y;
+                    std::cout << ", width=" << std::get<std::pair<int, int>>(hitbox.data).first;
+                    std::cout << ", height=" << std::get<std::pair<int, int>>(hitbox.data).second;
                     break;
                 case Hitbox::Type::Circle:
-                    std::cout << "Circle, x=" << hitbox.x << ", y=" << hitbox.y << ", ";
-                    if (std::holds_alternative<int>(hitbox.data)) {
-                        std::cout << "radius=" << std::get<int>(hitbox.data);
-                    }
-                    std::cout << "\n";
+                    std::cout << "Circle, x=" << hitbox.x << ", y=" << hitbox.y;
+                    std::cout << ", radius=" << std::get<int>(hitbox.data);
                     break;
                 case Hitbox::Type::Polygon:
-                    std::cout << "Polygon, x=" << hitbox.x << ", y=" << hitbox.y << ", ";
-                    if (std::holds_alternative<std::vector<std::pair<int, int>>>(hitbox.data)) {
-                        const auto& points = std::get<std::vector<std::pair<int, int>>>(hitbox.data);
-                        std::cout << "points: ";
-                        for (const auto& point : points) {
-                            std::cout << "(" << point.first << "," << point.second << ") ";
-                        }
+                    std::cout << "Polygon, x=" << hitbox.x << ", y=" << hitbox.y;
+                    std::cout << ", points: ";
+                    for (const auto& point : std::get<std::vector<std::pair<int, int>>>(hitbox.data)) {
+                        std::cout << "(" << point.first << "," << point.second << ") ";
                     }
-                    std::cout << "\n";
                     break;
                 case Hitbox::Type::Point:
-                    std::cout << "Point, x=" << hitbox.x << ", y=" << hitbox.y << "\n";
+                    std::cout << "Point, x=" << hitbox.x << ", y=" << hitbox.y;
                     break;
                 }
+                std::cout << "\n";
             }
         }
 
-        // Sprawdzenie, czy tile ma animację
-        const auto* animationData = std::get_if<AnimatedData>(&entry.second.properties);
-        if (animationData && !animationData->empty()) {
+        // Animacja
+        if (!entry.second.animation.empty()) {
             std::cout << "Animation Frames: \n";
-            for (const auto& frame : *animationData) {
+            for (const auto& frame : entry.second.animation) {
                 std::cout << "  Frame ID: " << frame.first << ", Duration: " << frame.second << " ms\n";
             }
         }

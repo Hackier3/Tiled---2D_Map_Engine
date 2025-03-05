@@ -1,11 +1,13 @@
 ﻿  gunmen.cpp
   Map.cpp
-C:\Users\filip\source\repos\gunmen\src\Map.cpp(297,44): warning C4267: "=": konwersja z "size_t" do "int", możliwa utrata danych
-C:\Users\filip\source\repos\gunmen\src\Map.cpp(337,20): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
-C:\Users\filip\source\repos\gunmen\src\Map.cpp(338,23): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
-C:\Users\filip\source\repos\gunmen\src\Map.cpp(346,62): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
-C:\Users\filip\source\repos\gunmen\src\Map.cpp(346,35): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(271,44): warning C4267: "=": konwersja z "size_t" do "int", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(311,20): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(312,23): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(320,62): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(320,35): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+  World.cpp
   Generowanie kodu...
+     Trwa tworzenie biblioteki C:\Users\filip\source\repos\gunmen\out\x64\Debug\gunmen.lib i obiektu C:\Users\filip\source\repos\gunmen\out\x64\Debug\gunmen.exp
   gunmen.vcxproj -> C:\Users\filip\source\repos\gunmen\out\x64\Debug\gunmen.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
