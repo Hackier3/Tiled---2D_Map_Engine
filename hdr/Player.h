@@ -2,6 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include "Animation.h"
 
+class Animation;
+
 class Player {
 public :
 	friend class World;
@@ -13,7 +15,7 @@ public :
 
 private:
 	sf::RectangleShape body;
-	Animation animation;
+	Animation* animation;
 	unsigned int row;
 	float speed;
 	bool faceRight;

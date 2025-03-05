@@ -4,9 +4,8 @@
 #include "../hdr/Player.h"
 #include <iostream>
 
-Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed) :
-	animation(texture, imageCount, switchTime)
-{
+Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed){
+	animation = new Animation(texture, imageCount, switchTime);
 	this->speed = speed;
 	row = 0;
 	faceRight = true;
@@ -15,8 +14,8 @@ Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, 
 	this->spawnYCord = 200;
 	
 	// obliczamy wysokość proporcjonalnie do tekstury
-	float scaleFactor = bodyWidth / animation.uvRect.width;  // Proporcja szerokości
-	float bodyHeight = animation.uvRect.height * scaleFactor;  // Skalowanie wysokości według tej samej proporcji
+	float scaleFactor = bodyWidth / animation->uvRect.width;  // Proporcja szerokości
+	float bodyHeight = animation->uvRect.height * scaleFactor;  // Skalowanie wysokości według tej samej proporcji
 
 	body.setSize(sf::Vector2f(bodyWidth, bodyHeight));  // Ustawienie nowych wymiarów
 	body.setPosition({ spawnXCord, spawnYCord });
@@ -52,7 +51,7 @@ void Player::Update(float deltaTime) {
 	}
 
 	if (moving) {
-		animation.UpdateCharacter(row, deltaTime, faceRight);
+		animation->UpdateCharacter(row, deltaTime, faceRight);
 	}
 	else {
 		static float timeSinceLastChange = 0.0f;
@@ -60,20 +59,19 @@ void Player::Update(float deltaTime) {
 		timeSinceLastChange += deltaTime;
 			
 		if (timeSinceLastChange >= changeInterval) {
-			if (animation.GetCurrentImageColumn() != animation.GetImageCountColumn() - 1) {
-				animation.SetCurrentImageColumn(animation.GetImageCountColumn() - 1);
+			if (animation->GetCurrentImageColumn() != animation->GetImageCountColumn() - 1) {
+				animation->SetCurrentImageColumn(animation->GetImageCountColumn() - 1);
 			}
 			else {
-				animation.SetCurrentImageColumn(0);
+				animation->SetCurrentImageColumn(0);
 			}
 
 			timeSinceLastChange = 0.0f; // Resetowanie czasu po zmianie klatki
-			animation.UpdateCharacter(row, 0, faceRight);
+			animation->UpdateCharacter(row, 0, faceRight);
 		}
 	}
 
-
-	body.setTextureRect(animation.uvRect);
+	body.setTextureRect(animation->uvRect);
 	body.move(movement);
 }
 
@@ -86,4 +84,5 @@ sf::Vector2f Player::GetPosition() {
 }
 
 Player::~Player() {
+	delete animation;
 };

@@ -1,11 +1,5 @@
 ﻿  gunmen.cpp
   Animation.cpp
-C:\Users\filip\source\repos\gunmen\hdr\World.h(22,12): error C2079: "World::player" używa niezdefiniowanego class "Player"
-  (kompilowanie pliku źródłowego „gunmen.cpp”)
-  
-C:\Users\filip\source\repos\gunmen\hdr\Player.h(16,12): error C2079: "Player::animation" używa niezdefiniowanego class "Animation"
-  (kompilowanie pliku źródłowego „src/Animation.cpp”)
-  
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(10,31): warning C4244: "=": konwersja z "float" do "T", możliwa utrata danych
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(10,31): warning C4244:         with
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(10,31): warning C4244:         [
@@ -16,17 +10,15 @@ C:\Users\filip\source\repos\gunmen\src\Animation.cpp(11,32): warning C4244:     
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(11,32): warning C4244:         [
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(11,32): warning C4244:             T=int
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(11,32): warning C4244:         ]
+  Map.cpp
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(299,44): warning C4267: "=": konwersja z "size_t" do "int", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(339,20): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(340,23): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(348,62): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(348,35): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
   Player.cpp
-C:\Users\filip\source\repos\gunmen\hdr\Player.h(16,12): error C2079: "Player::animation" używa niezdefiniowanego class "Animation"
-  (kompilowanie pliku źródłowego „src/Player.cpp”)
-  
-C:\Users\filip\source\repos\gunmen\src\Player.cpp(8,11): error C2440: "inicjowanie": nie można konwertować z "initializer list" na "int"
-      C:\Users\filip\source\repos\gunmen\src\Player.cpp(8,11):
-      Inicjator zawiera zbyt wiele elementów
-  
-C:\Users\filip\source\repos\gunmen\src\Player.cpp(8,11): error C2439: „Player::animation”: Nie można zainicjować składowej
-      C:\Users\filip\source\repos\gunmen\hdr\Player.h(16,12):
-      zobacz deklarację „Player::animation”
-  
   World.cpp
   Generowanie kodu...
+  gunmen.vcxproj -> C:\Users\filip\source\repos\gunmen\out\x64\Debug\gunmen.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

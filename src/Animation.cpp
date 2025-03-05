@@ -36,7 +36,7 @@ void Animation::UpdateCharacter(int row, float deltaTime, bool faceRight){
 	}
 }
 
-void Animation::UpdateTileInLayer(World& world, float deltaTime) {
+void Animation::UpdateLayersTextures(World& world, float deltaTime) {
 	for (auto& map : world.maps) {
 		for (auto& layer : map.layers) {
 			for (auto& tile : layer->animatedTiles) {
@@ -58,5 +58,4 @@ unsigned int Animation::GetImageCountColumn() {
 	return imageCount.x;
 }
 
-Animation::~Animation() {
-}
+Animation::~Animation() {}

@@ -65,7 +65,7 @@ private:
 		std::string path = "";
 		bool isFromTileSet;
 		AnimatedData animation;
-		std::vector<Hitbox> hitboxes;
+		std::vector<Hitbox> hitbox;
 	};
 
 	// Struktura dla konkretnych kafelkow w warstwie
@@ -116,10 +116,10 @@ private:
 public:
 	friend class World;
 	friend class Animation;
+
 	Map(std::string mapPath);
 	Map(Map&&) = default;
 	Map& operator=(Map&&) = default;
 	~Map();
-	void printInfo();
+	void printInfo() const;
 };
-
