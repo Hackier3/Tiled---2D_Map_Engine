@@ -5,7 +5,9 @@
 #include <vector>
 #include <utility> 
 #include <sstream> 
+#include "Player.h"
 
+class Player;
 struct Layer;
 struct Tile;
 
@@ -110,8 +112,7 @@ private:
 	void setTilesAnimation();
 	void setTilesHitboxes();
 	void processTileLayers();
-	void drawUnderground(sf::RenderWindow& window);
-	void drawUpground(sf::RenderWindow& window);
+	void draw(sf::RenderWindow& window, int undergruoundLayers, Player* player, int upgroundLayers);
 
 public:
 	friend class World;

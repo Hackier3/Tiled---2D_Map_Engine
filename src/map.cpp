@@ -370,15 +370,16 @@ void Map::Layer::setAnimatedTiles() {
     }
 }
 
-void Map::drawUnderground(sf::RenderWindow& window) {
-    for (size_t i = 0; i < layers.size() - 2; i++) {
-        window.draw(layers[i]->sprite);
-    }
-}
+void Map::draw(sf::RenderWindow& window, int undergruoundLayers, Player* player, int upgroundLayers) {
+    for (size_t i = 0; i < undergruoundLayers; i++) {
+            window.draw(layers[i]->sprite);
+        }
 
-void Map::drawUpground(sf::RenderWindow& window) {
-    if (!layers.empty()) {
-        window.draw(layers.back()->sprite);
+    player->Draw(window);
+    int startIndex = std::max(0, static_cast<int>((layers.size()) - upgroundLayers));
+
+    for (int i = startIndex; i < layers.size(); ++i) {
+        window.draw(layers[i]->sprite);
     }
 }
 

@@ -22,9 +22,7 @@ World::World(sf::Texture* playerTexture, sf::RenderWindow& window)
 
 void World::Draw() {
     view.setCenter(player->GetPosition());
-    maps[0].drawUnderground(window);
-    player->Draw(window);
-    maps[0].drawUpground(window);
+    maps[0].draw(window, 3, player, 1);
     window.display();
     window.clear();
 }

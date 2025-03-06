@@ -85,8 +85,6 @@ void Animation::UpdateLayersTextures(World& world, float deltaTime) {
 	}
 }
 
-
-
 void Animation::SetCurrentImageColumn(unsigned int xSetter) {
 	currentImage.x = xSetter;
 }

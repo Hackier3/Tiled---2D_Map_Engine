@@ -1,4 +1,5 @@
-﻿  Animation.cpp
+﻿  gunmen.cpp
+  Animation.cpp
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(11,31): warning C4244: "=": konwersja z "float" do "T", możliwa utrata danych
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(11,31): warning C4244:         with
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(11,31): warning C4244:         [
@@ -32,6 +33,16 @@ C:\Users\filip\source\repos\gunmen\src\Animation.cpp(68,58): warning C4244: "arg
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(68,35): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(76,55): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(76,32): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+  Map.cpp
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(299,44): warning C4267: "=": konwersja z "size_t" do "int", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(339,20): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(340,23): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(348,62): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Map.cpp(348,35): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+  Player.cpp
+  World.cpp
+  Generowanie kodu...
+     Trwa tworzenie biblioteki C:\Users\filip\source\repos\gunmen\out\x64\Debug\gunmen.lib i obiektu C:\Users\filip\source\repos\gunmen\out\x64\Debug\gunmen.exp
   gunmen.vcxproj -> C:\Users\filip\source\repos\gunmen\out\x64\Debug\gunmen.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
