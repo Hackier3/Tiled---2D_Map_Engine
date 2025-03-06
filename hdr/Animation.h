@@ -8,6 +8,7 @@ class World;
 class Animation {
 public:
     friend class Player;
+    friend class World;
     Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime);
     ~Animation();
     unsigned int GetCurrentImageColumn();
@@ -21,6 +22,6 @@ private:
     float switchTime;
 
     void UpdateCharacter(int row, float deltaTime, bool faceRight);
-    void UpdateLayersTextures(World& world, float deltaTime);
+    static void UpdateLayersTextures(World& world, float deltaTime);
     void SetCurrentImageColumn(unsigned int xSetter);
 };

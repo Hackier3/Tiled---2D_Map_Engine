@@ -32,6 +32,7 @@ void World::Draw() {
 void World::Update(float deltaTime) {
     this->deltaTime = deltaTime;
     player->Update(deltaTime);
+    Animation::UpdateLayersTextures(*this, deltaTime);
     this->CenterView();
     this->Draw();
 }

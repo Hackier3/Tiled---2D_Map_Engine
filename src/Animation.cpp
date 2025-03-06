@@ -1,4 +1,5 @@
 ﻿#include "../hdr/Animation.h"
+#include <filesystem>
 
 Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime){
 	this->imageCount = imageCount;
@@ -39,12 +40,52 @@ void Animation::UpdateCharacter(int row, float deltaTime, bool faceRight){
 void Animation::UpdateLayersTextures(World& world, float deltaTime) {
 	for (auto& map : world.maps) {
 		for (auto& layer : map.layers) {
+
 			for (auto& tile : layer->animatedTiles) {
-				
+				// Aktualizacja czasu do zmiany klatki
+				std::get<2>(tile.allFramesInfo[tile.recentTile]) -= deltaTime * 1000;
+
+				// Jeśli czas do zmiany klatki się skończył, przechodzimy do następnej
+				if (std::get<2>(tile.allFramesInfo[tile.recentTile]) > 0) {
+					continue;
+				}
+
+				tile.recentTile = (tile.recentTile + 1) % tile.allFramesInfo.size();
+
+				// Ustawienie nowego czasu dla bieżącej klatki
+				std::get<2>(tile.allFramesInfo[tile.recentTile]) = std::get<1>(tile.allFramesInfo[tile.recentTile]);
+
+				int newTileID = std::get<0>(tile.allFramesInfo[tile.recentTile]);
+				auto it = map.tilesInfo.find(newTileID);
+
+				if (it != map.tilesInfo.end()) {
+					sf::Texture newTexture;
+					if (!newTexture.loadFromFile(it->second.path)) {
+						throw std::runtime_error("Failed to load texture" + it->second.path);
+					}
+
+					sf::RectangleShape clearRect(sf::Vector2f(newTexture.getSize().x, newTexture.getSize().y));
+					clearRect.setPosition(tile.x * map.tileSize, tile.y * map.tileSize);
+					clearRect.setFillColor(sf::Color::Transparent);
+
+					sf::RenderStates states;
+					states.blendMode = sf::BlendNone; // Tryb mieszania: zastąp piksele
+					layer->canvasTexture.draw(clearRect, states);
+
+					sf::Sprite sprite(newTexture);
+					sprite.setPosition(tile.x * map.tileSize, tile.y * map.tileSize);
+					layer->canvasTexture.draw(sprite);
+					layer->canvasTexture.display();
+
+					layer->canvasTexture.display();
+					layer->sprite.setTexture(layer->canvasTexture.getTexture());
+				}
 			}
 		}
 	}
 }
+
+
 
 void Animation::SetCurrentImageColumn(unsigned int xSetter) {
 	currentImage.x = xSetter;

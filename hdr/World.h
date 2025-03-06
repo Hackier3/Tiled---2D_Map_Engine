@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "Map.h"
 #include "Player.h"
+#include "Animation.h"
 
 class Map;
 class Player;

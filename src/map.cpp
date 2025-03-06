@@ -326,7 +326,7 @@ void Map::Layer::createLayerSprite() {
     }
     canvasTexture.clear(sf::Color::Transparent);
 
-    for (auto& tile : tiles) {
+    for (auto& tile : tiles) {        
         sf::Texture texture;
         if (!texture.loadFromFile(tile.tile.path)) {
             throw std::runtime_error("Cannot load file");
