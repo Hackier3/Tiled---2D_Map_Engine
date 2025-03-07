@@ -285,8 +285,8 @@ void Map::processTileLayers() {
 
                     // Odkodowanie gid
                     uint32_t tileID;
-                    bool flipHorizontal, flipVertical, flipDiagonal;
-                    Decoder::DecodeGID(gid, tileID, flipHorizontal, flipVertical, flipDiagonal);
+                    bool flipHorizontal, flipVertical, rotate90;
+                    Decoder::DecodeGID(gid, tileID, flipHorizontal, flipVertical, rotate90);
 
                     if (tileID != 0) { // Pomijamy puste kafelki
                         // Znajdź kafelek w tilesInfo
@@ -299,7 +299,7 @@ void Map::processTileLayers() {
                             tileInfo.y = i / layer->width;
                             tileInfo.flipHorizontal = flipHorizontal;
                             tileInfo.flipVertical = flipVertical;
-                            tileInfo.flipDiagonal = flipDiagonal;
+                            tileInfo.rotate90 = rotate90;
 
                             // Dodaj TileInfo do warstwy
                             layer->tiles.push_back(tileInfo);
@@ -345,7 +345,8 @@ void Map::Layer::createLayerSprite() {
                                               tile.tile.ID / tilesPerColumn * parent->tileSize + parent->tileSize));
 		}
 
-        sprite.setPosition(tile.x * parent->tileSize, tile.y * parent->tileSize);
+        sprite.setOrigin(0, texture.getSize().y); // Dolny lewy róg
+        sprite.setPosition(tile.x * parent->tileSize, (tile.y + 1) * parent->tileSize);
         canvasTexture.draw(sprite);
     }
 
@@ -370,7 +371,11 @@ void Map::Layer::setAnimatedTiles() {
     }
 }
 
-void Map::draw(sf::RenderWindow& window, int undergruoundLayers, Player* player, int upgroundLayers) {
+void Map::draw(sf::RenderWindow& window, Player* player, int undergruoundLayers, int upgroundLayers){
+    if (undergruoundLayers == -1) { // domyslna wartosc
+        undergruoundLayers = static_cast<int>(layers.size()) - 1;
+    }
+    
     for (size_t i = 0; i < undergruoundLayers; i++) {
             window.draw(layers[i]->sprite);
         }

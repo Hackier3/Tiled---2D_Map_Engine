@@ -20,7 +20,7 @@ public:
     void Update(float deltaTime);
 
 private:
-    static World* instance;
+    static std::unique_ptr<World> instance;
     float deltaTime;
     std::vector<Map> maps;
     Player* player;

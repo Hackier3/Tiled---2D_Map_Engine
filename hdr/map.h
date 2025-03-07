@@ -74,9 +74,9 @@ private:
 	struct TileInfo {
 		Tile tile; 
 		int x, y;
-		bool flipHorizontal;
 		bool flipVertical;
-		bool flipDiagonal;
+		bool flipHorizontal;
+		bool rotate90;
 	};
 
 	struct Layer {
@@ -112,11 +112,12 @@ private:
 	void setTilesAnimation();
 	void setTilesHitboxes();
 	void processTileLayers();
-	void draw(sf::RenderWindow& window, int undergruoundLayers, Player* player, int upgroundLayers);
+	void draw(sf::RenderWindow& window, Player* player, int undergruoundLayers = -1, int upgroundLayers = 1);
 
 public:
 	friend class World;
 	friend class Animation;
+	friend class Decoder;
 
 	Map(std::string mapPath);
 	Map(Map&&) = default;

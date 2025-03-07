@@ -1,10 +1,10 @@
 ﻿#include "../hdr/World.h"
 
-World* World::instance = nullptr;
+std::unique_ptr<World> World::instance = nullptr;
 
 World& World::getInstance(sf::Texture* playerTexture, sf::RenderWindow& window) {
     if (!instance) {
-        instance = new World(playerTexture, window);
+        instance = std::make_unique<World>(playerTexture, window);
     }
     return *instance;
 }
@@ -17,22 +17,22 @@ World::World(sf::Texture* playerTexture, sf::RenderWindow& window)
     this->viewWidth = viewHeight * windowRatio;
     sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(viewWidth, viewHeight));
     this->view = view;
-    this->maps.push_back(Map("resources/maps/obozowisko.tmx"));
+    this->maps.push_back(Map("resources/maps/test.tmx"));
 }
 
 void World::Draw() {
     view.setCenter(player->GetPosition());
-    maps[0].draw(window, 3, player, 1);
+    maps[0].draw(window, player, 1, 0);
     window.display();
     window.clear();
 }
 
 void World::Update(float deltaTime) {
-    this->deltaTime = deltaTime;
+    World::deltaTime = deltaTime;
     player->Update(deltaTime);
     Animation::UpdateLayersTextures(*this, deltaTime);
-    this->CenterView();
-    this->Draw();
+    World::CenterView();
+    World::Draw();
 }
 
 void World::CenterView() {

@@ -5,7 +5,7 @@
 #include <openssl/buffer.h>
 #include <stdexcept>
 
-void Decoder::DecodeGID(uint32_t gid, uint32_t& tileID, bool& flipHorizontal, bool& flipVertical, bool& flipDiagonal) {
+void Decoder::DecodeGID(uint32_t gid, uint32_t& tileID, bool& flipHorizontal, bool& flipVertical, bool& rotate90) {
     // Maska do wyodrębnienia 3 najważniejszych bitów
     const uint32_t FLIPPED_HORIZONTALLY_FLAG = 0x80000000;
     const uint32_t FLIPPED_VERTICALLY_FLAG = 0x40000000;
@@ -14,7 +14,7 @@ void Decoder::DecodeGID(uint32_t gid, uint32_t& tileID, bool& flipHorizontal, bo
     // Sprawdź, czy bity są ustawione
     flipHorizontal = (gid & FLIPPED_HORIZONTALLY_FLAG) != 0;
     flipVertical = (gid & FLIPPED_VERTICALLY_FLAG) != 0;
-    flipDiagonal = (gid & FLIPPED_DIAGONALLY_FLAG) != 0;
+    rotate90 = (gid & FLIPPED_DIAGONALLY_FLAG) != 0;
 
     // Odcięcie 3 najważniejszych bitów, aby uzyskać prawdziwy identyfikator kafelka
     tileID = gid & ~(FLIPPED_HORIZONTALLY_FLAG | FLIPPED_VERTICALLY_FLAG | FLIPPED_DIAGONALLY_FLAG);

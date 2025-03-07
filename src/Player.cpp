@@ -10,8 +10,8 @@ Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, 
 	row = 0;
 	faceRight = true;
 	this->bodyWidth = 30.0f;
-	this->spawnXCord = 200;
-	this->spawnYCord = 200;
+	this->spawnXCord = 0;
+	this->spawnYCord = 0;
 	
 	// obliczamy wysokość proporcjonalnie do tekstury
 	float scaleFactor = bodyWidth / animation->uvRect.width;  // Proporcja szerokości
@@ -19,7 +19,7 @@ Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, 
 
 	body.setSize(sf::Vector2f(bodyWidth, bodyHeight));  // Ustawienie nowych wymiarów
 	body.setPosition({ spawnXCord, spawnYCord });
-	body.setOrigin(body.getSize().x / 2, body.getSize().y / 2);
+	body.setOrigin(0, body.getSize().y);
 	body.setTexture(texture);
 }
 
