@@ -17,12 +17,12 @@ World::World(sf::Texture* playerTexture, sf::RenderWindow& window)
     this->viewWidth = viewHeight * windowRatio;
     sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(viewWidth, viewHeight));
     this->view = view;
-    this->maps.push_back(Map("resources/maps/test.tmx"));
+    this->maps.push_back(Map("resources/maps/obozowisko.tmx"));
 }
 
 void World::Draw() {
     view.setCenter(player->GetPosition());
-    maps[0].draw(window, player, 1, 0);
+    maps[0].draw(window, player, 3, 1);
     window.display();
     window.clear();
 }

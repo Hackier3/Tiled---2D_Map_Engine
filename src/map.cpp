@@ -343,9 +343,13 @@ void Map::Layer::createLayerSprite() {
                                               tile.tile.ID / tilesPerColumn * parent->tileSize,
                                               tile.tile.ID % tilesPerRow * parent->tileSize + parent->tileSize,
                                               tile.tile.ID / tilesPerColumn * parent->tileSize + parent->tileSize));
-		}
 
-        sprite.setOrigin(0, texture.getSize().y); // Dolny lewy róg
+            sprite.setOrigin(0, parent->tileSize); // Dolny lewy róg
+		}
+        else{
+            sprite.setOrigin(0, texture.getSize().y); // Dolny lewy róg
+        }
+
         sprite.setPosition(tile.x * parent->tileSize, (tile.y + 1) * parent->tileSize);
         canvasTexture.draw(sprite);
     }

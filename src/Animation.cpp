@@ -65,18 +65,24 @@ void Animation::UpdateLayersTextures(World& world, float deltaTime) {
 					}
 
 					sf::RectangleShape clearRect(sf::Vector2f(newTexture.getSize().x, newTexture.getSize().y));
+					sf::RenderStates states;
+					sf::Sprite sprite(newTexture);
+
 					clearRect.setPosition(tile.x * map.tileSize, tile.y * map.tileSize);
 					clearRect.setFillColor(sf::Color::Transparent);
 
-					sf::RenderStates states;
+					//if (tile.isFromTileset) {
+					//	sprite.setOrigin(0, parent->tileSize);
+					//}
+					//else {
+					//	sprite.setOrigin(0, texture.getSize().y);
+					//}
+
 					states.blendMode = sf::BlendNone; // Tryb mieszania: zastąp piksele
-					layer->canvasTexture.draw(clearRect, states);
-
-					sf::Sprite sprite(newTexture);
 					sprite.setPosition(tile.x * map.tileSize, tile.y * map.tileSize);
-					layer->canvasTexture.draw(sprite);
-					layer->canvasTexture.display();
 
+					layer->canvasTexture.draw(clearRect, states);
+					layer->canvasTexture.draw(sprite);
 					layer->canvasTexture.display();
 					layer->sprite.setTexture(layer->canvasTexture.getTexture());
 				}
