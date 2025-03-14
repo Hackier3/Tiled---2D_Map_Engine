@@ -38,57 +38,37 @@ void Animation::UpdateCharacter(int row, float deltaTime, bool faceRight){
 }
 
 void Animation::UpdateLayersTextures(World& world, float deltaTime) {
-	for (auto& map : world.maps) {
-		for (auto& layer : map.layers) {
+    for (auto& map : world.maps) {
+        for (auto& layer : map.layers) {
+            for (auto& tile : layer->animatedTiles) {
 
-			for (auto& tile : layer->animatedTiles) {
-				// Aktualizacja czasu do zmiany klatki
-				std::get<2>(tile.allFramesInfo[tile.recentTile]) -= deltaTime * 1000;
+				// Aktualizacja pozostałego czasu klatki
+				tile.framesInfo[tile.recentTile].second -= deltaTime * 1000;
 
-				// Jeśli czas do zmiany klatki się skończył, przechodzimy do następnej
-				if (std::get<2>(tile.allFramesInfo[tile.recentTile]) > 0) {
-					continue;
-				}
+                // Pomin jesli czas klatki animacji sie nie skonczyl
+                if (tile.framesInfo[tile.recentTile].second > 0) {
+                    continue;
+                }
 
-				tile.recentTile = (tile.recentTile + 1) % tile.allFramesInfo.size();
+				tile.framesInfo[tile.recentTile].second = tile.framesInfo[tile.recentTile].first; // reset czasu trwania klatki
+				tile.recentTile = (tile.recentTile + 1) % tile.framesInfo.size(); // zmiana indexowania klatki kafelka
+				
+				sf::RectangleShape clearRect(sf::Vector2f(tile.frameTextures[tile.recentTile].getSize().x, 
+														  tile.frameTextures[tile.recentTile].getSize().y));
+				clearRect.setPosition(tile.frameSprites[tile.recentTile].getPosition());
+				clearRect.setOrigin(tile.frameSprites[tile.recentTile].getOrigin());
+				clearRect.setFillColor(sf::Color::Transparent);
 
-				// Ustawienie nowego czasu dla bieżącej klatki
-				std::get<2>(tile.allFramesInfo[tile.recentTile]) = std::get<1>(tile.allFramesInfo[tile.recentTile]);
+				sf::RenderStates states;
+				states.blendMode = sf::BlendNone; // Tryb mieszania: zastąp piksele
+				layer->canvasTexture.draw(clearRect, states);
 
-				int newTileID = std::get<0>(tile.allFramesInfo[tile.recentTile]);
-				auto it = map.tilesInfo.find(newTileID);
-
-				if (it != map.tilesInfo.end()) {
-					sf::Texture newTexture;
-					if (!newTexture.loadFromFile(it->second.path)) {
-						throw std::runtime_error("Failed to load texture" + it->second.path);
-					}
-
-					sf::RectangleShape clearRect(sf::Vector2f(newTexture.getSize().x, newTexture.getSize().y));
-					sf::RenderStates states;
-					sf::Sprite sprite(newTexture);
-
-					clearRect.setPosition(tile.x * map.tileSize, tile.y * map.tileSize);
-					clearRect.setFillColor(sf::Color::Transparent);
-
-					//if (tile.isFromTileset) {
-					//	sprite.setOrigin(0, parent->tileSize);
-					//}
-					//else {
-					//	sprite.setOrigin(0, texture.getSize().y);
-					//}
-
-					states.blendMode = sf::BlendNone; // Tryb mieszania: zastąp piksele
-					sprite.setPosition(tile.x * map.tileSize, tile.y * map.tileSize);
-
-					layer->canvasTexture.draw(clearRect, states);
-					layer->canvasTexture.draw(sprite);
-					layer->canvasTexture.display();
-					layer->sprite.setTexture(layer->canvasTexture.getTexture());
-				}
-			}
-		}
-	}
+				layer->canvasTexture.draw(tile.frameSprites[0]);
+				layer->canvasTexture.display();
+				layer->sprite.setTexture(layer->canvasTexture.getTexture());
+            }
+        }
+    }
 }
 
 void Animation::SetCurrentImageColumn(unsigned int xSetter) {

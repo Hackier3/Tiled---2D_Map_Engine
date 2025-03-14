@@ -360,17 +360,30 @@ void Map::Layer::createLayerSprite() {
 
 void Map::Layer::setAnimatedTiles() {
     for (auto& tile : tiles) {
-        if (tile.tile.animation.size() != 0) {
+        if (!tile.tile.animation.empty()) {
             AnimatedTile animatedTile;
             animatedTile.x = tile.x;
             animatedTile.y = tile.y;
             animatedTile.ID = tile.tile.ID;
 
             for (const auto& frame : tile.tile.animation) {
-                animatedTile.allFramesInfo.push_back(std::make_tuple(frame.first, frame.second, frame.second));
+                animatedTile.framesInfo.emplace_back(frame.second, frame.second);
+
+                // Tworzenie nowej tekstury bezpośrednio w wektorze
+                std::unique_ptr<sf::Texture> frameTexture = std::make_unique<sf::Texture>();
+				
+                if (!frameTexture->loadFromFile(tile.tile.path)) {
+					throw std::runtime_error("Cannot load tile texture");
+				}
+				animatedTile.frameTextures.push_back(std::move(*frameTexture));
+
+                std::unique_ptr<sf::Sprite> frameSprite = std::make_unique<sf::Sprite>();
+				frameSprite->setOrigin(0, animatedTile.frameTextures.back().getSize().y);
+				frameSprite->setPosition(tile.x * parent->tileSize, (tile.y + 1) * parent->tileSize);
+				animatedTile.frameSprites.push_back(std::move(*frameSprite));
             }
 
-            this->animatedTiles.push_back(animatedTile);
+            this->animatedTiles.push_back(std::move(animatedTile)); // Przeniesienie AnimatedTile
         }
     }
 }

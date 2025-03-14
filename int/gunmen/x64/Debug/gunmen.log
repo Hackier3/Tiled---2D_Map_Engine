@@ -9,29 +9,29 @@ C:\Users\filip\source\repos\gunmen\src\Animation.cpp(12,32): warning C4244:     
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(12,32): warning C4244:         [
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(12,32): warning C4244:             T=int
 C:\Users\filip\source\repos\gunmen\src\Animation.cpp(12,32): warning C4244:         ]
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(46,67): warning C4244: "-=": konwersja z "float" do "int", możliwa utrata danych
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,92): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,92): warning C4244:         with
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,92): warning C4244:         [
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,92): warning C4244:             T=unsigned int
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,92): warning C4244:         ]
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,92): warning C4244:         and
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,92): warning C4244:         [
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,92): warning C4244:             T=float
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,92): warning C4244:         ]
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,68): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,68): warning C4244:         with
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,68): warning C4244:         [
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,68): warning C4244:             T=unsigned int
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,68): warning C4244:         ]
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,68): warning C4244:         and
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,68): warning C4244:         [
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,68): warning C4244:             T=float
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(67,68): warning C4244:         ]
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(71,58): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(71,35): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(82,55): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
-C:\Users\filip\source\repos\gunmen\src\Animation.cpp(82,32): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(46,58): warning C4244: "-=": konwersja z "float" do "_Ty2", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(46,58): warning C4244:         with
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(46,58): warning C4244:         [
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(46,58): warning C4244:             _Ty2=int
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(46,58): warning C4244:         ]
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(57,62): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(57,62): warning C4244:         with
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(57,62): warning C4244:         [
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(57,62): warning C4244:             T=unsigned int
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(57,62): warning C4244:         ]
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(57,62): warning C4244:         and
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(57,62): warning C4244:         [
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(57,62): warning C4244:             T=float
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(57,62): warning C4244:         ]
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(56,92): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(56,92): warning C4244:         with
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(56,92): warning C4244:         [
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(56,92): warning C4244:             T=unsigned int
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(56,92): warning C4244:         ]
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(56,92): warning C4244:         and
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(56,92): warning C4244:         [
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(56,92): warning C4244:             T=float
+C:\Users\filip\source\repos\gunmen\src\Animation.cpp(56,92): warning C4244:         ]
   gunmen.vcxproj -> C:\Users\filip\source\repos\gunmen\out\x64\Debug\gunmen.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
