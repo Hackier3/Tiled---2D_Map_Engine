@@ -366,24 +366,38 @@ void Map::Layer::setAnimatedTiles() {
             animatedTile.y = tile.y;
             animatedTile.ID = tile.tile.ID;
 
+            int index = 0;
             for (const auto& frame : tile.tile.animation) {
+                // Dodaj informacje o klatce animacji
                 animatedTile.framesInfo.emplace_back(frame.second, frame.second);
 
-                // Tworzenie nowej tekstury bezpośrednio w wektorze
-                std::unique_ptr<sf::Texture> frameTexture = std::make_unique<sf::Texture>();
-				
-                if (!frameTexture->loadFromFile(tile.tile.path)) {
-					throw std::runtime_error("Cannot load tile texture");
-				}
-				animatedTile.frameTextures.push_back(std::move(*frameTexture));
+                // Tworzenie nowej tekstury
+            
+                auto it = tilesInfo.find(tile.tile.animation.at(index).first);
+                if (it != tilesInfo.end()) {
+                    sf::Texture* frameTexture = new sf::Texture(); // Alokacja na stercie
+                    if (!frameTexture->loadFromFile(it->second.path)) {
+                        delete frameTexture; // Zwolnienie pamięci w przypadku błędu
+                        throw std::runtime_error("Cannot load tile texture: " + it->second.path);
+                    }
+                    animatedTile.frameTextures.push_back(frameTexture); // Dodaj wskaźnik do wektora
 
-                std::unique_ptr<sf::Sprite> frameSprite = std::make_unique<sf::Sprite>();
-				frameSprite->setOrigin(0, animatedTile.frameTextures.back().getSize().y);
-				frameSprite->setPosition(tile.x * parent->tileSize, (tile.y + 1) * parent->tileSize);
-				animatedTile.frameSprites.push_back(std::move(*frameSprite));
+
+                    // Tworzenie nowego sprite'a i przypisanie tekstury
+                    sf::Sprite* frameSprite = new sf::Sprite(); // Alokacja na stercie
+                    frameSprite->setTexture(*frameTexture); // Przypisz teksturę do sprite'a
+                    frameSprite->setOrigin(0, frameTexture->getSize().y); // Ustaw origin
+                    frameSprite->setPosition(tile.x * parent->tileSize, (tile.y + 1) * parent->tileSize); // Ustaw pozycję
+                    animatedTile.frameSprites.push_back(frameSprite); // Dodaj wskaźnik do wektora
+                }
+                
+                
+
+                index++;
             }
 
-            this->animatedTiles.push_back(std::move(animatedTile)); // Przeniesienie AnimatedTile
+            // Dodaj animowany kafelek do listy
+            this->animatedTiles.push_back(std::move(animatedTile));
         }
     }
 }

@@ -1,6 +1,7 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include <vector>
+#include <memory>
 #include <SFML/Graphics.hpp>
 #include "Map.h"
 #include "Player.h"
@@ -22,7 +23,7 @@ public:
 private:
     static std::unique_ptr<World> instance;
     float deltaTime;
-    std::vector<Map> maps;
+    std::vector<std::unique_ptr<Map>> maps;
     Player* player;
     sf::RenderWindow& window;
     sf::View view;

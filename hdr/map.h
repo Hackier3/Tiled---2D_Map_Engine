@@ -89,8 +89,8 @@ private:
 			int y;
 			int recentTile = 0;
 			std::vector<std::pair<int, int>> framesInfo; // { czas trwania klatki, pozostaly czas do zmiany klatki }
-			std::vector<sf::Sprite> frameSprites;
-			std::vector<sf::Texture> frameTextures; 
+			std::vector<sf::Sprite*> frameSprites;
+			std::vector<sf::Texture*> frameTextures; 
 		};
 
 		short int id;

@@ -10,19 +10,21 @@ World& World::getInstance(sf::Texture* playerTexture, sf::RenderWindow& window) 
 }
 
 World::World(sf::Texture* playerTexture, sf::RenderWindow& window)
-    : window(window){
+    : window(window) {
     player = new Player(playerTexture, sf::Vector2u(9, 3), 0.1f, 150.0f);
     float windowRatio = float(window.getSize().x) / float(window.getSize().y);
     this->viewHeight = 700;
     this->viewWidth = viewHeight * windowRatio;
     sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(viewWidth, viewHeight));
     this->view = view;
-    this->maps.push_back(Map("resources/maps/obozowisko.tmx"));
+
+    // Tworzenie obiektu Map i dodanie do wektora
+    maps.push_back(std::make_unique<Map>("resources/maps/obozowisko.tmx"));
 }
 
 void World::Draw() {
     view.setCenter(player->GetPosition());
-    maps[0].draw(window, player, 1, 3);
+    maps.at(0)->draw(window, player, 1, 3); // Użyj operatora -> do wywołania metody na unique_ptr
     window.display();
     window.clear();
 }

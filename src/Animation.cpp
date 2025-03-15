@@ -39,7 +39,7 @@ void Animation::UpdateCharacter(int row, float deltaTime, bool faceRight){
 
 void Animation::UpdateLayersTextures(World& world, float deltaTime) {
     for (auto& map : world.maps) {
-        for (auto& layer : map.layers) {
+        for (auto& layer : map->layers) {
             for (auto& tile : layer->animatedTiles) {
 
 				// Aktualizacja pozostałego czasu klatki
@@ -53,17 +53,17 @@ void Animation::UpdateLayersTextures(World& world, float deltaTime) {
 				tile.framesInfo[tile.recentTile].second = tile.framesInfo[tile.recentTile].first; // reset czasu trwania klatki
 				tile.recentTile = (tile.recentTile + 1) % tile.framesInfo.size(); // zmiana indexowania klatki kafelka
 				
-				sf::RectangleShape clearRect(sf::Vector2f(tile.frameTextures[tile.recentTile].getSize().x, 
-														  tile.frameTextures[tile.recentTile].getSize().y));
-				clearRect.setPosition(tile.frameSprites[tile.recentTile].getPosition());
-				clearRect.setOrigin(tile.frameSprites[tile.recentTile].getOrigin());
+				sf::RectangleShape clearRect(sf::Vector2f(tile.frameTextures[tile.recentTile]->getSize().x, 
+														  tile.frameTextures[tile.recentTile]->getSize().y));
+				clearRect.setPosition(tile.frameSprites[tile.recentTile]->getPosition());
+				clearRect.setOrigin(tile.frameSprites[tile.recentTile]->getOrigin());
 				clearRect.setFillColor(sf::Color::Transparent);
 
 				sf::RenderStates states;
 				states.blendMode = sf::BlendNone; // Tryb mieszania: zastąp piksele
 				layer->canvasTexture.draw(clearRect, states);
 
-				layer->canvasTexture.draw(tile.frameSprites[0]);
+				layer->canvasTexture.draw(*tile.frameSprites[tile.recentTile]);
 				layer->canvasTexture.display();
 				layer->sprite.setTexture(layer->canvasTexture.getTexture());
             }
