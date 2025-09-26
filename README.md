@@ -35,7 +35,7 @@ The engine automatically:
 
 ## Tiled Integration Example
 
-![Tiled Demo](docs/tileddemo.bmp)
+![Tiled Demo](docs/tiledDemo.bmp)
 *Seamless integration between Tiled Editor and the game engine*
 
 ## Who this project is for:
